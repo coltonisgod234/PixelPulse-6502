@@ -2,7 +2,7 @@
 The PixelPulse 6502 Fantasy Computer is a fantasy computer inspired by the likes of the Apple ][e and the [Pico-8](https://www.lexaloffle.com/pico-8.php)
 
 ## License Info
-This Is Licesnsed Under The [GNU GPL 3.0](https://github.com/coltonisgod234/PixelPulse-6502/LICENSE/)
+This Is Licesnsed Under The [GNU GPL 3.0](https://github.com/coltonisgod234/PixelPulse-6502/blob/main/LICENSE)
 
 ## What is it?
 This is a [Fantasy Computer](https://en.wikipedia.org/wiki/Fantasy_video_game_console) (or fantasy video game console) designed for the development of retro games.
