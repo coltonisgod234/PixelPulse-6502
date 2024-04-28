@@ -12,7 +12,7 @@ It Has a modified 6502 instruction set, 16KB of RAM, A 140x260 display with 4 bi
 
 # How Should I Get Started With PixelPulse 6502?
 Getting started is easy! Simply:
-1. Download the development kit, this contains an assembler, an emulator and a linker!
+1. Download the development kit, this contains an assembler, an emulator and a linker! (Not Done Yet, It'll Be Done Really Soon I Promise!)
 2. Download the PulseOS ROM Image (not available yet), (this part is not finished, come back later!)
 3. Check out [the wiki!](https://github.com/coltonisgod234/PixelPulse-6502/wiki/)
 4. Start making games!
@@ -21,4 +21,4 @@ Getting started is easy! Simply:
 Starting is hard, we all struggle with it. So I reccomend before trying anything to make a simple hello world program that just prints "HELLO WORLD" to the top left of the screen.
 
 ## I Made A Game, How Do I Share It?
-Sharing Games Is Easy, Just Go Over To The [Sharing Repo](https://github.com/coltonisgod234/PixelPulse-6502-Sharing) And Post Your Game's ROM In The Issues Tab!
+Sharing Games Is Easy, Just Go Over To The [Discussion](https://github.com/coltonisgod234/PixelPulse-6502/discussions/1) And Post Your Game's ROM In The Issues Tab!
