@@ -21,4 +21,4 @@ Getting started is easy! Simply:
 Starting is hard, we all struggle with it. So I reccomend before trying anything to make a simple hello world program that just prints "HELLO WORLD" to the top left of the screen.
 
 ## I Made A Game, How Do I Share It?
-Sharing Games Is Easy, Just Go Over To The [Sharing Repo](https://github.com/coltonisgod234/PixelPulse-6502-Sharing) And Post Your Game's ROM In The Issues Tab!
+Sharing Games Is Easy, Just Go Over To The [Discussion](https://github.com/coltonisgod234/PixelPulse-6502/discussions/1) And Post Your Game's ROM In The Issues Tab!
