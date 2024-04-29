@@ -1,6 +1,6 @@
 import pygame
 
-rom = [0x01,0xFF,0x00, 0x01,0x10,0x00] # Will Change To Argparse, Only Like This In Debug Mode.
+rom = [0x01,0x0F,0x00, 0x04,0x10,0x10, 0x13, 0x00, 0x00] # Will Change To Argparse, Only Like This In Debug Mode.
 
 class BinaryRegister:
     """
@@ -92,7 +92,8 @@ class cpu:
         self.saved_pc = [ConstrainedRegister(0, 32768, can_set_carry_flag=False) for i in range(16)]
         self.saved_pc_count = ConstrainedRegister(0, 15)
 
-        self.ram = [BinaryRegister() for i in range(32768)]
+        self.ram = [BinaryRegister() for i in range(65535)]
+        self.vram = [0 for _ in range(0x1000, 0x2FFF)]
 
         print("*** CPU IS OKAY ***")
 
@@ -106,7 +107,10 @@ class cpu:
 
     def read_mem(self, address):
         try:
-            return self.ram[address].value
+            if address > len(self.ram):
+                return rom[address]
+            else:
+                return self.ram[address].value
         except IndexError:
             print("Invalid Or Bad Address", address)
 
@@ -114,6 +118,19 @@ class cpu:
         # Combine the high byte and low byte into a 16-bit address
         address = (high_byte << 8) | low_byte
         return address
+    
+    def update_memory_mapped_io(self):
+        # First The Screen, The Screen Is From 0x1000 To 0x17FF
+        i = 0
+        for byte in range(0x1000,0x2FFF):
+            # For every pixel we read it's value and place it in VRAM
+            #print(byte)
+            self.vram[i] = self.read_mem(byte)
+            i += 1
+            if(0x0F in self.vram == True):
+                print("Booyah")
+
+        #print(self.vram)
 
     def run_once(self, rom):
         opcode = rom[self.reg_programcounter.value]
@@ -220,7 +237,7 @@ class cpu:
                 self.reg_flags.sign = False
 
         elif opcode == 0x13: # JMP $
-            self.reg_programcounter = operand
+            self.reg_programcounter.value = operand
 
         elif opcode == 0x14: # SPC
             self.write_mem(0x1A20, self.reg_programcounter.value)
@@ -241,28 +258,60 @@ class cpu:
         elif opcode == 0x19: # LPC
             self.reg_programcounter.change(self.read_mem(0x1A20))
 
-        print(f"PC:{self.reg_programcounter.value} | A:{self.reg_a.value} | X: {self.reg_x.value} | Y: {self.reg_y.value} | CARRY: {self.reg_flags.carry} | EQUAL: {self.reg_flags.equal} | SIGN: {self.reg_flags.sign}")
+        self.update_memory_mapped_io()
+
+        print(f"PC:{self.reg_programcounter.value} | A:{self.reg_a.value} | X: {self.reg_x.value} | Y: {self.reg_y.value} | CARRY: {self.reg_flags.carry} | EQUAL: {self.reg_flags.equal} | SIGN: {self.reg_flags.sign} | ADDR:{hex(address)} | DATA_ADDR:{self.read_mem(address)}")
         self.reg_programcounter.change(self.reg_programcounter.value + 3)
 
 # Initialize Pygame
 pygame.init()
 # Set up Pygame window
-screen = pygame.display.set_mode((160, 240))
+screen = pygame.display.set_mode((640, 480))
 pygame.display.set_caption("PixelPulse 6502 Emulator")
 
 print("********************* BOOTUP *************************")
 print("* PIXELPULSE 6502 IS A FANTASY VIDEO GAME CONSOLE    *")
 print("* THANK YOU TO __________ ON DISCORD AND THE PYGAME  *")
-print("* PYGAME TEAM FOR HELPING MAKE THIS PROJECT POSSIBLE!*")
+print("* TEAM FOR HELPING MAKE THIS PROJECT POSSIBLE!       *")
 print("******************************************************")
 
 emulated_cpu = cpu()
 
 running = True
 
+colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128, 0, 128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
+
+def draw_pixel(x,y,color):
+    """
+    Draws A Pixel To The Screen, X and Y and pixel coordinents (top left is 0,0) and color is a 3 value tuple containing an RGB colour
+    """
+    global screen
+    rect = pygame.Rect(x,y,8,8)
+    pygame.draw.rect(screen,color,rect,3)
+
+def get_nibble_from_byte(byte,is_high_nibble):
+    if is_high_nibble: return byte & 0x0F
+    else: return (byte >> 4) & 0x0F
+
 while running:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: running = False
+        if event.type == pygame.QUIT: 
+            #print(emulated_cpu.vram)
+            running = False
+    
+    screen.fill((0,0,0))
+
+    #print(hex(len(emulated_cpu.vram)))
+
+    for x in range(64):
+        for y in range(64):
+            col_index = get_nibble_from_byte(emulated_cpu.vram[y * 64 + x], False)
+            draw_pixel(x,y,colors[col_index])
+
+            col_index = get_nibble_from_byte(emulated_cpu.vram[y * 64 + x], True)
+            draw_pixel(x,y,colors[col_index])
+
+    pygame.display.flip()
     
     if emulated_cpu.reg_programcounter.value > len(rom) - 2: running = False
     else: emulated_cpu.run_once(rom)
