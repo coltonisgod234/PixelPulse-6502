@@ -1,4 +1,11 @@
-lda 0F
-add 1004
-sox 1004
-jmp 0002
+; We Want 2 White pixels
+lda FF
+
+iny 01
+
+; 
+sxy 1000
+
+cpy 255
+
+beq

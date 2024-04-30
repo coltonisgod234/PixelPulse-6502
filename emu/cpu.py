@@ -1,6 +1,7 @@
 import pygame
+from time import sleep
 
-rom = [0x00,0x00,0x00,0x1,0x0F,0x00,0x7,0x10,0x04,0x4,0x10,0x04,0x13,0x00,0x02]
+rom = [0x00,0x00,0x00,0x1,0xFF,0x00,0x1e,0x01,0x00,0x20,0x10,0x00,0xe,0x255,0x00]
 
 class BinaryRegister:
     """
@@ -79,193 +80,101 @@ class GameController:
 
 class cpu:
     def __init__(self):
+        """
+        Class For The PixelPulses' Central Processing Unit (CPU)
+        """
         self.p1 = GameController()
         self.p2 = GameController()
 
-        # Initalize The Registers
-        self.reg_a = BinaryRegister()
-        self.reg_x = BinaryRegister()
-        self.reg_y = BinaryRegister()
-        self.reg_flags = FlagsRegister() # This One Is Special (♪freinds♪)
+        self.acc = BinaryRegister()
+        self.x = BinaryRegister()
+        self.y = BinaryRegister()
+        self.pc = BinaryRegister(bitwidth=16)
+        self.flags = FlagsRegister()
 
-        self.reg_programcounter = ConstrainedRegister(0, 32768, can_set_carry_flag=False)
-        self.saved_pc = [ConstrainedRegister(0, 32768, can_set_carry_flag=False) for i in range(16)]
-        self.saved_pc_count = ConstrainedRegister(0, 15)
-
-        self.ram = [BinaryRegister() for i in range(65535)]
-        self.vram = [0 for _ in range(0x1000, 0x2FFF)]
-
-        print("*** CPU IS OKAY ***")
-
-        print("*** RAM IS OKAY ***")
+        self.ram = [BinaryRegister() for i in range(2**16-1)]
+        self.vram = [BinaryRegister() for i in range(0x1000,0x2FFF)]
 
     def write_mem(self, address, data):
+        """
+        Write To The Memory Of The PixelPulse. Address and data are both integers
+        """
         try:
-            self.ram[address].change(data.value)
+            self.ram[address].change(data)
         except IndexError:
-            print("Invalid Or Bad Address", address)
-
+            print("BAD MEMORY INDEX OR VALUE")
+        
     def read_mem(self, address):
+        """
+        Read From The Memory Of The PixelPulse. Address is an integer
+        """
         try:
-            if address > len(self.ram):
-                return rom[address]
+            if address > 0xFFFF:
+                # We Read Out Of Bounds, So We Need To Return ROM Instead
+                return self.rom[address] # ROM Is An Integer, Because I Hate People
             else:
                 return self.ram[address].value
-        except IndexError:
-            print("Invalid Or Bad Address", address)
 
-    def combine_address(self, high_byte, low_byte):
-        # Combine the high byte and low byte into a 16-bit address
+        except IndexError:
+            print("BAD MEMORY INDEX OR VALUE")
+
+    def merge_address(self, low_byte, high_byte):
         address = (high_byte << 8) | low_byte
         return address
-    
-    def update_memory_mapped_io(self):
-        # First The Screen, The Screen Is From 0x1000 To 0x17FF
-        i = 0
-        for byte in range(0x1000,0x2FFF):
-            # For every pixel we read it's value and place it in VRAM
-            #print(byte)
-            self.vram[i] = self.read_mem(byte)
-            i += 1
-
-        #print(self.vram)
 
     def run_once(self, rom):
-        opcode = rom[self.reg_programcounter.value]
-        operand = rom[self.reg_programcounter.value + 1]
-        address = self.combine_address(rom[self.reg_programcounter.value + 1], rom[self.reg_programcounter.value + 2])
-        #print(opcode, operand)
+        opcode = rom[self.pc]
+        operand = rom[self.pc + 1]
+        operand2 = rom[self.pc + 2]
 
-        if opcode == 0x00: # NOP
-            pass # Do Nothing
-        elif opcode == 0x01: # LDA #
-            self.reg_a.value = operand # Set Register A To The Operand
-        elif opcode == 0x02: # LDY #
-            self.reg_y.value = operand # Set Register Y To The Operand
-        elif opcode == 0x03: # LDX #
-            self.reg_x.value = operand # Set Register X To The Operand
-        elif opcode == 0x04: # STA $
-            self.write_mem(address, self.reg_a)
-        elif opcode == 0x05: # STY $
-            self.write_mem(address, self.reg_y)
-        elif opcode == 0x06: # STX $
-            self.write_mem(address, self.reg_x)
-        elif opcode == 0x07: # ADD $
-            self.reg_a.value = self.read_mem(address) + self.reg_a.value # Set The Value In Register A To The Sum Of A Value In RAM Plus Itself
-        elif opcode == 0x08: # SUB $
-            self.reg_a.value = self.read_mem(address) - self.reg_a.value # Set The Value In Register A To The Subtraction Of A Value In RAM Minus Itself
-        elif opcode == 0x09: # AND $
-            self.reg_a.value = self.read_mem(address) & self.reg_a.value # Set The Value In Register A To Itself Bitwise ANDed With A Value In RAM
-        elif opcode == 0x0A: # ORA $
-            self.reg_a.value = self.read_mem(address) | self.reg_a.value # Set The Value In Register A To Itself Bitwise ORed With A Value In RAM
-        elif opcode == 0x0B: # EOR $
-            self.reg_a.value = self.read_mem(address) ^ self.reg_a.value  # Set The Value In Register A To Itself Bitwise XORed With A Value In RAM
-        elif opcode == 0x0C: # CMP $
-            # Compare The Value In The A Register To A Value In RAM
-            if self.reg_a.value == self.read_mem(address):
-                # Set The Equal Flag
-                self.reg_flags.equal = True
-            else: self.reg_flags.equal = False
-            
-            # See If It's Less Than (For BMI)
-            if self.reg_a.value < self.read_mem(address):
-                # Set The Sign Flag
-                self.reg_flags.sign = True
-            else: self.reg_flags.sign = False
-        
-        elif opcode == 0x0D: # CPX $
-            # Compare The Value In The X Register To A Value In RAM
-            if self.reg_x.value == self.read_mem(address):
-                # Set The Equal Flag
-                self.reg_flags.equal = True
-            else: self.reg_flags.equal = False
-            
-            # See If It's Less Than (For BMI)
-            if self.reg_x.value < self.read_mem(address):
-                # Set The Sign Flag
-                self.reg_flags.sign = True
-            else: 
-                self.reg_flags.sign = False
-        
-        elif opcode == 0x0E: # CPY $
-            # Compare The Value In The Y Register To A Value In RAM
-            if self.reg_y.value == self.read_mem(address):
-                # Set The Equal Flag
-                self.reg_flags.equal = True
-            else: 
-                self.reg_flags.equal = False
-            
-            # See If It's Less Than (For BMI)
-            if self.reg_y.value < self.read_mem(address):
-                # Set The Sign Flag
-                self.reg_flags.sign = True
-            else: 
-                self.reg_flags.sign = False
-        
-        elif opcode == 0x0F: # BEQ $
-            # Branch To A Routine If Equal Flag Is Set
-            if self.reg_flags.equal:
-                self.reg_programcounter = address
-            
-            else:
-                self.reg_flags.equal = False
+        address = self.merge_address(operand, operand2)
 
-        elif opcode == 0x10: # BNE $
-            # Branch To A Routine If Equal Flag Is Not Set
-            if not self.reg_flags.equal: 
-                self.reg_programcounter = address
+        if opcode == 0x00: pass
 
-            else:
-                self.reg_flags.equal = False
-        
-        elif opcode == 0x11: # BPS $
-            # Branch To A Routine If Sign Flag Is Not Set
-            if not self.reg_flags.sign:
-                self.reg_programcounter = address
+        elif opcode == 0x01: self.acc.change(operand) # LDA
+        elif opcode == 0x02: self.y.change(operand) # LDY
+        elif opcode == 0x03: self.x.change(operand) # LDX
+        elif opcode == 0x04: self.write_mem(address, self.acc) # STA
+        elif opcode == 0x05: self.write_mem(address, self.y) # STY
+        elif opcode == 0x06: self.write_mem(address, self.x) # STX
+        elif opcode == 0x07: self.acc.change(self.acc.value + self.read_mem(address)) # ADD
+        elif opcode == 0x08: self.acc.change(self.acc.value - self.read_mem(address)) # SUB
+        elif opcode == 0x09: self.acc.change(self.acc.value & self.read_mem(address)) # AND
+        elif opcode == 0x0A: self.acc.change(self.acc.value | self.read_mem(address)) # ORA
+        elif opcode == 0x0B: self.acc.change(self.acc.value ^ self.read_mem(address)) # EOR
+        elif opcode == 0x0C: # CMP
+            if self.acc == self.read_mem(address): self.flags.equal = True
+            else: self.flags.equal = False
 
-            else:
-                self.reg_flags.sign = False
+            if self.acc < self.read_mem(address): self.flags.sign = True
+            else: self.flags.sign = False
 
-        elif opcode == 0x12: # BMI $
-            # Branch To A Routine If Sign Flag Is Set
-            if self.reg_flags.sign:
-                self.reg_programcounter = address
+        elif opcode == 0x0D: # CPX
+            if self.x == operand: self.flags.equal = True
+            else: self.flags.equal = False
 
-            else:
-                self.reg_flags.sign = False
+            if self.x < operand: self.flags.sign = True
+            else: self.flags.sign = False
 
-        elif opcode == 0x13: # JMP $
-            self.reg_programcounter.value = operand
+        elif opcode == 0x0E: # CPY
+            if self.y == operand: self.flags.equal = True
+            else: self.flags.equal = False
 
-        elif opcode == 0x14: # SPC
-            self.write_mem(0x1A20, self.reg_programcounter.value)
-            print("SAVED PROGRAM COUNTER AT 0x1A20")
+            if self.y < operand: self.flags.sign = True
+            else: self.flags.sign = False
 
-        elif opcode == 0x15: # INT
-            print("INTERUPT REQUEST NOT HANDLED")
+        elif opcode == 0x0F: # BEQ
+            if self.flags.equal: self.pc.change(address)
 
-        elif opcode == 0x16: # LDA $
-            self.reg_a.value = self.ram[operand].value # Set Register A To A Value In Memory
+        elif opcode == 0x10: # BNE
+            if not self.flags.equal: self.pc.change(address)
 
-        elif opcode == 0x17: # LDX $
-            self.reg_x.value = self.ram[operand].value # Set Register X To A Value In Memory
+        elif opcode == 0x11: # BPS
+            if not self.flags.sign: self.pc.change(address)
 
-        elif opcode == 0x18: # LDY $
-            self.reg_y.value = self.ram[operand].value # Set Register Y To A Value In Memory
+        elif opcode == 0x12: # BMI
+            if self.flags.sign: self.pc.change(address)
 
-        elif opcode == 0x19: # LPC
-            self.reg_programcounter.change(self.read_mem(0x1A20))
-
-        elif opcode == 0x1A: # SOX
-            self.write_mem(address+self.reg_x, self.reg_a)
-
-        elif opcode == 0x1B: # SOY
-            self.write_mem(address+self.reg_y, self.reg_a)
-
-        self.update_memory_mapped_io()
-
-        print(f"PC:{self.reg_programcounter.value} | A:{self.reg_a.value} | X: {self.reg_x.value} | Y: {self.reg_y.value} | CARRY: {self.reg_flags.carry} | EQUAL: {self.reg_flags.equal} | SIGN: {self.reg_flags.sign} | ADDR:{hex(address)} | DATA_ADDR:{self.read_mem(address)}")
-        self.reg_programcounter.change(self.reg_programcounter.value + 3)
 
 # Initialize Pygame
 pygame.init()

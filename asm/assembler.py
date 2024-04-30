@@ -35,7 +35,12 @@ instructions = {
     "ldy_m": 0x18,
     "lpc": 0x19,
     "sox": 0x1A,
-    "soy": 0x1B
+    "soy": 0x1B,
+    "inx": 0x1C,
+    "dex": 0x1D,
+    "iny": 0x1E,
+    "dey": 0x1F,
+    "sxy": 0x20
 }
 
 
@@ -61,6 +66,12 @@ for i in range(len(code)):
     if len(line) < 2: # It's A Subroutine Then
         print(f"{line} is a subroutine")
     else: # It's An Instruction
+
+        # Check If We Even Care
+        if ";" in line[0]:
+            print(line, "is a comment")
+            continue
+
         # Handle The Opcode
         inst = instructions[line[0]]
         operand = line[1]
@@ -68,12 +79,13 @@ for i in range(len(code)):
         output_filepointer.write(f",{hex(inst)}")
 
         # And Then Handle The Operand
-        if len(operand) == 2:
+        if len(operand) >= 1 and len(operand) <= 3:
             # Then This Is An Immideate Value
+            print(line, "is data")
             hexvalue = operand.strip()
             output_filepointer.write(f",0x{hexvalue}")
             output_filepointer.write(",0x00")
-        elif len(operand) == 1:
+        elif len(operand) == 0:
             print("Implied Instruction, We Do Not Care")
         else: # This Is A Memory Instruction
             print(line, "is memory")
