@@ -33,7 +33,9 @@ instructions = {
     "lda_m": 0x16,
     "ldx_m": 0x17,
     "ldy_m": 0x18,
-    "lpc": 0x19
+    "lpc": 0x19,
+    "sox": 0x1A,
+    "soy": 0x1B
 }
 
 

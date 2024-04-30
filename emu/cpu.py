@@ -1,6 +1,6 @@
 import pygame
 
-rom = [0x01,0x0F,0x00, 0x04,0x10,0x10, 0x13, 0x00, 0x00] # Will Change To Argparse, Only Like This In Debug Mode.
+rom = [0x00,0x00,0x00,0x1,0x0F,0x00,0x7,0x10,0x04,0x4,0x10,0x04,0x13,0x00,0x02]
 
 class BinaryRegister:
     """
@@ -13,7 +13,7 @@ class BinaryRegister:
     def change(self, value):
         if value > 2 ** self.bitwidth - 1:
             print("Register Overflow, Setting Overflow Flag And Resetting To 0")
-            self.reg_flags.carry = True
+            emulated_cpu.reg_flags.carry = True
             self.value = 0
         else:
             self.value = value
@@ -32,7 +32,7 @@ class ConstrainedRegister:
         if value > self.max:
             print("Register Overflow, Setting Overflow Flag And Resetting To 0")
             if self.allow_carry:
-                self.reg_flags.carry = True
+                emulated_cpu.reg_flags.carry = True
             self.value = 0
         elif value < self.min:
             print("Register Underflow, Overflowing To Maximim")
@@ -127,8 +127,6 @@ class cpu:
             #print(byte)
             self.vram[i] = self.read_mem(byte)
             i += 1
-            if(0x0F in self.vram == True):
-                print("Booyah")
 
         #print(self.vram)
 
@@ -153,15 +151,15 @@ class cpu:
         elif opcode == 0x06: # STX $
             self.write_mem(address, self.reg_x)
         elif opcode == 0x07: # ADD $
-            self.reg_a.value = self.read_mem(address) + self.reg_a # Set The Value In Register A To The Sum Of A Value In RAM Plus Itself
+            self.reg_a.value = self.read_mem(address) + self.reg_a.value # Set The Value In Register A To The Sum Of A Value In RAM Plus Itself
         elif opcode == 0x08: # SUB $
-            self.reg_a.value = self.read_mem(address) - self.reg_a # Set The Value In Register A To The Subtraction Of A Value In RAM Minus Itself
+            self.reg_a.value = self.read_mem(address) - self.reg_a.value # Set The Value In Register A To The Subtraction Of A Value In RAM Minus Itself
         elif opcode == 0x09: # AND $
-            self.reg_a.value = self.read_mem(address) & self.reg_a # Set The Value In Register A To Itself Bitwise ANDed With A Value In RAM
+            self.reg_a.value = self.read_mem(address) & self.reg_a.value # Set The Value In Register A To Itself Bitwise ANDed With A Value In RAM
         elif opcode == 0x0A: # ORA $
-            self.reg_a.value = self.read_mem(address) | self.reg_a # Set The Value In Register A To Itself Bitwise ORed With A Value In RAM
+            self.reg_a.value = self.read_mem(address) | self.reg_a.value # Set The Value In Register A To Itself Bitwise ORed With A Value In RAM
         elif opcode == 0x0B: # EOR $
-            self.reg_a.value = self.read_mem(address) ^ self.reg_a  # Set The Value In Register A To Itself Bitwise XORed With A Value In RAM
+            self.reg_a.value = self.read_mem(address) ^ self.reg_a.value  # Set The Value In Register A To Itself Bitwise XORed With A Value In RAM
         elif opcode == 0x0C: # CMP $
             # Compare The Value In The A Register To A Value In RAM
             if self.reg_a.value == self.read_mem(address):
@@ -257,6 +255,12 @@ class cpu:
 
         elif opcode == 0x19: # LPC
             self.reg_programcounter.change(self.read_mem(0x1A20))
+
+        elif opcode == 0x1A: # SOX
+            self.write_mem(address+self.reg_x, self.reg_a)
+
+        elif opcode == 0x1B: # SOY
+            self.write_mem(address+self.reg_y, self.reg_a)
 
         self.update_memory_mapped_io()
 
