@@ -2,6 +2,8 @@ import py65
 import py65.devices
 import py65.devices.mpu65c02
 
+import argparse
+
 import pygame
 
 class GameController:
@@ -37,7 +39,7 @@ class GameController:
 colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128, 0, 128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
 
 def draw_pixel(x, y, col):
-    rect = pygame.rect.Rect(x, y, 4, 4)
+    rect = pygame.rect.Rect(x, y, 8, 8)
     pygame.draw.rect(display, colors[col], rect)
 
 def update_io():
