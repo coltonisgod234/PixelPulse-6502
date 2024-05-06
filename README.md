@@ -8,7 +8,7 @@ This Is Licesnsed Under The [GNU GPL 3.0](https://github.com/coltonisgod234/Pixe
 This is a [Fantasy Computer](https://en.wikipedia.org/wiki/Fantasy_video_game_console) (or fantasy video game console) designed for the development of retro games.
 
 ## Well... What Does it Do?
-It Has a 65c02 microprocessor, 32KB of RAM, A 140x260 display with 4 bits per pixel and a versitile audio chip capible of producing 4 square waves, 4 triangle waves, 4 sin waves and 4 sawtooth waves!
+It Has a 65c02 microprocessor, 32KB of RAM, A 64x64 display with 4 bits per pixel and a versitile audio chip capible of producing 4 square waves, 4 triangle waves, 4 sin waves and 4 sawtooth waves!
 
 # How Should I Get Started With PixelPulse 6502?
 Getting started is easy! Simply:
