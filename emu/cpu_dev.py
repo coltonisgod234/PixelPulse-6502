@@ -4,8 +4,8 @@ import time
 import argparse
 
 parser = argparse.ArgumentParser(description="Emulator For The PixelPulse 6502")
-parser.add_argument("Cartridge", metavar="cart", type=str, help="cartridge To Boot From")
-parser.add_argument("-D", action="store_true", help="when true, the system will run in debug mode")
+parser.add_argument("Cartridge", metavar="cart", type=str, help="Cartridge To Boot From")
+parser.add_argument("-D", metavar="dbg", type=bool, help="Should The System Run In Debug Mode?")
 args = parser.parse_args()
 
 print(args)
@@ -31,16 +31,14 @@ class BinaryRegister:
     """
     Serves As A Base Class For All Numbers Used In The Emulator
     """
-    def __init__(self, value=0, bitwidth=8, cpu_emu=None):
+    def __init__(self, value=0, bitwidth=8):
         self.value = value
         self.bitwidth = bitwidth
-        self.cpu = cpu_emu
     
     def change(self, value):
         if value > 2 ** self.bitwidth - 1:
             print("Register Overflow, Setting Overflow Flag And Resetting To 0")
-            if self.cpu != None: self.cpu_emu.flags.carry = True
-            else: print("Can't Set Carry Flag. CPU is Nonetype or undefined")
+            emulated_cpu.flags.carry = True
             self.value = 0
         else:
             self.value = value
@@ -49,7 +47,7 @@ class ConstrainedRegister:
     """
     A Class For The Program Counter, Basically The Same As `BinaryRegister` But It Has A Max Value And A Minimum Value
     """
-    def __init__(self, minvalue, maxvalue, value=0, can_set_carry_flag=True, cpu_emu=None):
+    def __init__(self, minvalue, maxvalue, value=0, can_set_carry_flag=True):
         self.value = value
         self.max = maxvalue
         self.min = minvalue
@@ -58,9 +56,8 @@ class ConstrainedRegister:
     def change(self, value):
         if value > self.max:
             print("Register Overflow, Setting Overflow Flag And Resetting To 0")
-            if self.allow_carry and self.cpu != None:
-                emulated_cpu.reg_flags.carry = True
-            
+            if self.allow_carry:
+                emulated_cpu.flags.carry = True
             self.value = 0
         elif value < self.min:
             print("Register Underflow, Overflowing To Maximim")
@@ -153,9 +150,6 @@ class cpu:
         i = 0
         for byte in range(0x1000, 0x2FFF):
             self.vram[i] = self.read_mem(byte) # This Should Be A BinaryRegister, If It Is Not Something Is Wrong
-            if not isinstance(self.vram[i], BinaryRegister):
-                #print("Non BinaryRegister VRAM Object, Correcting...")
-                self.vram[i] = BinaryRegister(value=self.vram[i], bitwidth=8) # Correct It To A BinaryRegister
             i += 1
             #print("instance binary register", type(emulated_cpu.vram[i]), self.vram[i].value)
 
@@ -168,51 +162,47 @@ class cpu:
 
         if opcode == 0x00: pass
 
-        elif opcode == 0x01: self.acc.change(operand) # LDA
-        elif opcode == 0x02: self.y.change(operand) # LDY
-        elif opcode == 0x03: self.x.change(operand) # LDX
-        elif opcode == 0x04: self.write_mem(address, self.acc) # STA
-        elif opcode == 0x05: self.write_mem(address, self.y) # STY
-        elif opcode == 0x06: self.write_mem(address, self.x) # STX
-        elif opcode == 0x07: self.acc.change(self.acc.value + self.read_mem(address)) # ADD
-        elif opcode == 0x08: self.acc.change(self.acc.value - self.read_mem(address)) # SUB
-        elif opcode == 0x09: self.acc.change(self.acc.value & self.read_mem(address)) # AND
-        elif opcode == 0x0A: self.acc.change(self.acc.value | self.read_mem(address)) # ORA
-        elif opcode == 0x0B: self.acc.change(self.acc.value ^ self.read_mem(address)) # EOR
-        elif opcode == 0x0C: # CMP
-            if self.acc.value == self.read_mem(address): self.flags.equal = True
-            else: self.flags.equal = False
-
-            if self.acc.value < self.read_mem(address): self.flags.sign = True
-            else: self.flags.sign = False
-
-        elif opcode == 0x0D: # CPX
-            if self.x.value == operand: self.flags.equal = True
-            else: self.flags.equal = False
-
-            if self.x.value < operand: self.flags.sign = True
-            else: self.flags.sign = False
-
-        elif opcode == 0x0E: # CPY
-            if self.y.value == operand: self.flags.equal = True
-            else: self.flags.equal = False
-
-            if self.y.value < operand: self.flags.sign = True
-            else: self.flags.sign = False
-
-        elif opcode == 0x0F: # BEQ
-            if self.flags.equal: self.pc.change(address)
-
-        elif opcode == 0x10: # BNE
-            if not self.flags.equal: self.pc.change(address)
-
-        elif opcode == 0x11: # BPS
-            if not self.flags.sign: self.pc.change(address)
-
-        elif opcode == 0x12: # BMI
-            if self.flags.sign: self.pc.change(address)
+        elif opcode in [0x01, 0x02, 0x03]:
+            regs = ["acc","y","x"]
+            register = getattr(self, regs[opcode - 1])
+            #print(regs[opcode])
+            register.change(operand)
         
-        elif opcode == 0x13: # JMP
+        elif opcode in [0x04,0x05,0x06]: 
+            regs = ["acc","y","x"]
+            register = getattr(self, regs[opcode - 1])
+            self.write_mem(address, register.value)
+
+        elif opcode in [0x07, 0x08, 0x09, 0x0A, 0x0B]: 
+            ops = {
+                0x07: lambda x, y: x + y,  # Addition
+                0x08: lambda x, y: x - y,  # Subtraction
+                0x09: lambda x, y: x & y,  # Bitwise AND
+                0x0A: lambda x, y: x | y,  # Bitwise OR
+                0x0B: lambda x, y: x ^ y   # Bitwise XOR
+            }
+            result = ops[operand](self.acc.value, self.read_mem(address)) # Compute It
+            self.acc.change(result)
+        
+        elif opcode in [0x0C, 0x0D, 0x0E]: # Compares
+            regs = ["acc","y","x"]
+            register = getattr(self, regs[opcode - 0x0C]) # Index In 
+
+            if register.value == self.read_mem(address): self.flags.equal = True
+            else: self.flags.equal = False
+
+            if register.value < self.read_mem(address): self.flags.sign = True
+            else: self.flags.sign = False
+
+        elif opcode == 0x0F:
+            if self.flags.equal: self.pc.change(address)
+        elif opcode == 0x10: 
+            if not self.flags.equal: self.pc.change(address)
+        elif opcode == 0x11:
+            if not self.flags.sign: self.pc.change(address)
+        elif opcode == 0x12:
+            if self.flags.sign: self.pc.change(address)
+        elif opcode == 0x13:
             self.pc.change(address)
 
         elif opcode == 0x14: print("RESERVED OPCODE, WHAT ARE YOU TRYING TO DO?") # RES 
@@ -220,19 +210,36 @@ class cpu:
         elif opcode == 0x15: # INT
             print("BIOS INTERUPTS NOT HANDLED YET, SORRY")
 
-        elif opcode == 0x16: self.acc.change(self.read_mem(address)) # LDA_M
-        elif opcode == 0x17: self.x.change(self.read_mem(address)) # LDX_M
-        elif opcode == 0x18: self.y.change(self.read_mem(address)) # LDY_M
-        elif opcode == 0x19: self.acc.change(self.read_mem(address)) # LDA_M
+        elif opcode in [0x16, 0x17, 0x18]:
+            regs = ["acc","y","x"]
+            register = getattr(self, regs[opcode - 1])
+            #print(regs[opcode])
+            mem = self.read_mem(address)
+            register.change(mem) 
+
+        elif opcode == 0x19: print("RES")
         elif opcode == 0x1A: self.write_mem(address + self.x.value) # SOX
         elif opcode == 0x1B: self.write_mem(address + self.y.value) # SOY
-        elif opcode == 0x1C: self.x.change(self.x.value + operand) # INX
-        elif opcode == 0x1D: self.x.change(self.x.value - operand) # DEX
-        elif opcode == 0x1E: self.y.change(self.y.value + operand) # INY
-        elif opcode == 0x1F: self.y.change(self.y.value - operand) # DEY
+
+        elif opcode in [0x1C, 0x1D]: 
+            ops = {
+                0x1C: lambda x, y: x + y,  # Addition
+                0x1D: lambda x, y: x - y,  # Subtraction
+            }
+            result = ops[opcode](self.x.value, operand)
+            self.x.change(result)
+
+        elif opcode in [0x1E, 0x1F]: 
+            ops = {
+                0x1E: lambda x, y: x + y,  # Addition
+                0x1F: lambda x, y: x - y,  # Subtraction
+            }
+            result = ops[opcode](self.y.value, operand)
+            self.y.change(result)
+        
         elif opcode == 0x20: self.write_mem(address + self.x.value + self.y.value, self.acc.value)
 
-        print(f"PC:{self.pc.value: <5} | A:{self.acc.value: <3} | X:{self.x.value: <3} | Y:{self.y.value: <3}")
+        print(f"PC:{self.pc.value: <5} | A:{self.acc.value: <3} | X:{self.x.value: <3} | Y:{self.y.value: <3} | OPCODE: {hex(opcode): <3}")
         self.pc.change(self.pc.value + 3)
 
 
@@ -263,14 +270,6 @@ def draw_pixel(x,y,color):
     rect = pygame.Rect(x,y,10,10)
     pygame.draw.rect(screen,color,rect,3)
 
-def draw_screen():
-    for x in range(64):
-        for y in range(64):
-            try:
-                col_index = emulated_cpu.vram[y * 64 + x].value
-                draw_pixel(x,y,colors[col_index])
-            except IndexError:
-                print("BAD PIXEL DATA. PROBABLY READ PAST VRAM")
 #instructions = 0
 while running:
     #start_time = time.time()
@@ -284,6 +283,15 @@ while running:
 
     #print(hex(len(emulated_cpu.vram)))
 
+    for x in range(32):
+        for y in range(32):
+            try:
+                col_index = emulated_cpu.vram[y * 32 + x].value
+                draw_pixel(x,y,colors[col_index])
+                #print(emulated_cpu.vram[y * 32 + x]. value)
+            except IndexError:
+                print("BAD PIXEL DATA. PROBABLY READ PAST VRAM")
+
     pygame.display.flip()
     
     if emulated_cpu.pc.value > len(rom) - 2: running = False
@@ -294,10 +302,6 @@ while running:
         except IndexError:
             print("END OF PROGRAM. QUITING")
             quit(1)
-    
-    if emulated_cpu.pc.value % 1024 == 0:
-        draw_screen()
-        print("DREW SCREEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     #instructions += 1
     
