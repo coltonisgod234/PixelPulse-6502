@@ -6,6 +6,18 @@ import argparse
 
 import pygame
 
+parser = argparse.ArgumentParser(description="Emulator for the PixelPulse 6502")
+parser.add_argument("cart", metavar="cartridge", type=str, help="the cartdrige to load")
+parser.add_argument("-D", action="store_true", help="when set, the system will run in debug mode")
+args = parser.parse_args()
+
+try: f = open(args.cart)
+except FileNotFoundError: 
+    print(f"Cart File \"{args.cart}\" Not Found")
+    quit(1)
+
+program = f.read()
+
 class GameController:
     def __init__(self):
         self.buttons = ["up", "down", "left", "right", "a", "b"]
