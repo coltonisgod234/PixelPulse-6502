@@ -11,7 +11,7 @@ parser.add_argument("cart", metavar="cartridge", type=str, help="the cartdrige t
 parser.add_argument("-D", action="store_true", help="when set, the system will run in debug mode")
 args = parser.parse_args()
 
-try: f = open(args.cart)
+try: f = open(args.cart, "rb")
 except FileNotFoundError: 
     print(f"Cart File \"{args.cart}\" Not Found")
     quit(1)
@@ -75,11 +75,11 @@ def update_io():
             except IndexError:
                 print("BAD PIXEL DATA. PROBABLY READ PAST VRAM")
 
-program = [
-    0xA9, 0x05, # LDA #$05
-    0x8D, 0x00, 0x15, # STA $1500
-    0x4C, 0x00, 0x80 # JMP $8000
-]
+#program = [
+#    0xA9, 0x05, # LDA #$05
+#    0x8D, 0x00, 0x15, # STA $1500
+#    0x4C, 0x00, 0x80 # JMP $8000
+#]
 
 # Initalize The CPU
 cpu = py65.devices.mpu65c02.MPU()
