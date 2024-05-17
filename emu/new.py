@@ -7,6 +7,23 @@ import argparse
 import py65.disassembler
 import pygame
 
+import numpy as np
+
+# Constants
+CHANNELS_COUNT = 4 # Amount Of Voices
+DISPLAY_X_SIZE = 64
+DISPLAY_Y_SIZE = 64
+VRAM_LOCATION = 0x1000
+VRAM_END_LOCATION = 0x2FFF
+
+VOICES_COUNT = 4
+APU_VOLUME_BASE = 0.0
+APU_VOLUME_STEP = 0.05
+APU_PITCH_BASE = 500
+APU_PITCH_STEP = 150
+APU_SAMPLE_RATE = 2048
+APU_LENGTH = 10
+
 parser = argparse.ArgumentParser(description="Emulator for the PixelPulse 6502")
 parser.add_argument("cart", metavar="cartridge", type=str, help="the cartdrige to load")
 args = parser.parse_args()
@@ -26,6 +43,7 @@ for byte in range(len(program_bytes)):
     #print(f"{program_bytes[byte]:02X}", end=" ")
     program.append(int(program_bytes[byte]))
     
+print(len(program))
 
 #print(repr(program))
 
@@ -45,10 +63,10 @@ class GameController:
             "b": False
         }
 
-    def press(self, buttonName):
+    def press(self, buttonName: str):
         self.pressed[buttonName] = True
     
-    def release(self, buttonName):
+    def release(self, buttonName: str):
         self.pressed[buttonName] = False
 
     def convert_buttons_to_int(self):
@@ -63,11 +81,37 @@ class GameController:
         self.pressed_as_int = pressed_int
         return pressed_int
 
-colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128, 0, 128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
+colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
 
-def draw_pixel(x, y, col):
+def draw_pixel(x: int, y: int, col: int):
     rect = pygame.rect.Rect(x, y, 8, 8)
     pygame.draw.rect(display, colors[col], rect)
+
+def get_high_nibble(x: int):
+    return x >> 4
+
+def get_low_nibble(x: int):
+    return x & 0b1111
+
+def generate_triangle_wave(length, frequency, volume=1.0):
+    t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
+    triangle_wave = 2 * np.abs(2 * (t * frequency - np.floor(t * frequency + 0.5)))
+    return triangle_wave * volume
+
+def generate_sawtooth_wave(length, frequency, volume=1.0):
+    t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
+    sawtooth_wave = 2 * (t * frequency - np.floor(t * frequency))
+    return sawtooth_wave * volume
+
+def generate_square_wave(length, frequency, volume=1.0):
+    t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
+    square_wave = np.sign(np.sin(2 * np.pi * frequency * t))
+    return square_wave * volume
+
+def generate_sine_wave(length, frequency, volume=1.0):
+    t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
+    sine_wave = np.sin(2 * np.pi * frequency * t)
+    return sine_wave * volume
 
 def update_io():
     # Update The Controllers
@@ -75,20 +119,60 @@ def update_io():
     cpu.memory[0x3012] = controller2.convert_buttons_to_int()
 
     # Play The Sounds
-    pass # A Placeholder
+    audio_ram = cpu.memory[0x3000:0x3010]
+    for voice in range(VOICES_COUNT):
+        for channel in range(CHANNELS_COUNT):
+            if voice == 0: # It's A Square Wave
+                # Calculate freqencies and audios and stuff
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                buffer = generate_square_wave(APU_LENGTH, freq, vol)
+                sound = pygame.mixer.Sound(buffer)
+
+                sound.play(0)
+            
+            if voice == 1: # It's A Triangle Wave
+                # Calculate freqencies and audios and stuff
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                buffer = generate_triangle_wave(APU_LENGTH, freq, vol)
+                sound = pygame.mixer.Sound(buffer)
+
+                sound.play(0)
+
+            if voice == 2: # It's A Sawtooh Wave
+                # Calculate freqencies and audios and stuff
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                buffer = generate_sawtooth_wave(APU_LENGTH, freq, vol)
+                sound = pygame.mixer.Sound(buffer)
+
+                sound.play(0)
+            
+            if voice == 3: # It's A Sine Wave
+                # Calculate freqencies and audios and stuff
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                buffer = generate_sine_wave(APU_LENGTH, freq, vol)
+                sound = pygame.mixer.Sound(buffer)
+
+                sound.play(0)
 
     # Update The Pallete
     pass # A PLACEHOLDER
 
     # Draw The Display
-    vram = cpu.memory[0x1000:0x2000]
-    for x in range(64):
-        for y in range(64):
+    vram = cpu.memory[VRAM_LOCATION:VRAM_END_LOCATION]
+    for x in range(DISPLAY_X_SIZE):
+        for y in range(DISPLAY_Y_SIZE):
             try:
                 col = vram[y * 64 + x]
                 draw_pixel(x, y, col)
             except IndexError:
                 print("BAD PIXEL DATA. PROBABLY READ PAST VRAM")
+
+    # Audio Format: SQW1,SQW2,SQW3,SQW4 (pitch+=15), TRW1,TRW2,TRW3,TRW4, (pitch+=15), ETC, ETC.
+    # Byte Format: VVVV:PPPP
 
 #program = [
 #    0xA9, 0x05, # LDA #$05
@@ -98,9 +182,10 @@ def update_io():
 
 # Initalize The CPU
 cpu = py65.devices.mpu65c02.MPU()
-cpu.memory[0x8000:0x8000+len(program)] = program
+cpu.memory[0x0000:0xFFFF] = program
 
-cpu.pc = 0x8000
+# We've Gotta Check The Reset Vector
+print(cpu.memory[0xFFFC:0xFFFD])
 
 # Initalize The Controllers
 controller1 = GameController()
@@ -108,6 +193,7 @@ controller2 = GameController()
 
 # Initalize The Pygame
 pygame.display.init()
+pygame.mixer.init(APU_SAMPLE_RATE)
 display = pygame.display.set_mode((128, 128))
 
 # Hi!!!
@@ -119,7 +205,7 @@ display = pygame.display.set_mode((128, 128))
 #print("the above is blacked out, this person wishes for their privacy until the full release")
 
 
-def get_instruction_from_memory(addr):
+def get_instruction_from_memory(addr: int):
     addr_parser = py65.disassembler.AddressParser()
     dasm = py65.disassembler.Disassembler(cpu, addr_parser)
 
@@ -134,28 +220,28 @@ running = True
 
 frame_counter = 0
 
+key_mappings = {
+    pygame.K_x: "a",
+    pygame.K_z: "b",
+    pygame.K_UP: "up",
+    pygame.K_DOWN: "down",
+    pygame.K_LEFT: "left",
+    pygame.K_RIGHT: "right"
+}
+
 if __name__ == "__main__":
     while running:
         # Handle The Pygame Things
         for event in pygame.event.get():
             if event.type == pygame.QUIT: running = False
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_x: controller1.press("a")
-                elif event.key == pygame.K_z: controller1.press("b")
-                elif event.key == pygame.K_UP: controller1.press("up")
-                elif event.key == pygame.K_DOWN: controller1.press("down")
-                elif event.key == pygame.K_LEFT: controller1.press("left")
-                elif event.key == pygame.K_RIGHT: controller1.press("right")
 
-                elif event.key == pygame.K_d: dbg_con_open = ~dbg_con_open
-            
-            elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_x: controller1.release("a")
-                elif event.key == pygame.K_z: controller1.release("b")
-                elif event.key == pygame.K_UP: controller1.release("up")
-                elif event.key == pygame.K_DOWN: controller1.release("down")
-                elif event.key == pygame.K_LEFT: controller1.release("left")
-                elif event.key == pygame.K_RIGHT: controller1.release("right")
+        # Poll For Input
+        keys = pygame.key.get_pressed()
+        for key, button in key_mappings.items():
+            if keys[key]:
+                controller1.press(button)
+            else:
+                controller1.release(button)
         
         # Execute The Instruction
         cpu.step()
@@ -171,9 +257,9 @@ if __name__ == "__main__":
 
         frame_counter += 1
 
-        if frame_counter == 2048:
-            frame_counter = 0
-            #print("UPDATING IO")
-            update_io()
+        if frame_counter == 1024: 
+           frame_counter = 0
+           print("UPDATING IO")
+           update_io()
 
-        print(f"PC: {cpu.pc: <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <8} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc)[0]}")
+        print(f"PC: {cpu.pc: <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc)[0]: >3}")

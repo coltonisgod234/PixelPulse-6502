@@ -1,13 +1,8 @@
 .segment "CODE"
     .org $8000
     rst:
-        iny
-        
-        cpy #$FF
-        beq rst
-
-        sta $1000,x
-        inx
+        lda #$FF
+        sta $3000
         jmp rst
 
     nmi:
@@ -16,7 +11,7 @@
     irq:
         rti
 
-    .org $fffa
-    .word nmi	;Non-maskable interrupt vector
-    .word rst	;Reset interrupt vector
-    .word irq	;Interrupt request vector
+.segment "VECTORS"
+    .word nmi	; Non-maskable interrupt vector
+    .word rst	; Reset interrupt vector
+    .word irq	; Interrupt request vector
