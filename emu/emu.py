@@ -72,11 +72,11 @@ class GameController:
     def convert_buttons_to_int(self):
         pressed_int = 0
         if self.pressed["right"]: pressed_int |= 0b00100000
-        if self.pressed["left"]: pressed_int |= 0b00010000
-        if self.pressed["up"]: pressed_int |= 0b00001000
-        if self.pressed["down"]: pressed_int |= 0b00000100
-        if self.pressed["a"]: pressed_int |= 0b00000010
-        if self.pressed["b"]: pressed_int |= 0b00000001
+        if self.pressed["left"]: pressed_int  |= 0b00010000
+        if self.pressed["up"]: pressed_int    |= 0b00001000
+        if self.pressed["down"]: pressed_int  |= 0b00000100
+        if self.pressed["a"]: pressed_int     |= 0b00000010
+        if self.pressed["b"]: pressed_int     |= 0b00000001
 
         self.pressed_as_int = pressed_int
         return pressed_int
@@ -212,9 +212,8 @@ def get_instruction_from_memory(addr: int):
     i = dasm.instruction_at(addr)
 
     inst_fmt_opc = i[1]
-    inst_fmt_opr = i[0]
 
-    return [inst_fmt_opc, inst_fmt_opr]
+    return inst_fmt_opc
 
 running = True
 
@@ -262,4 +261,4 @@ if __name__ == "__main__":
            print("UPDATING IO")
            update_io()
 
-        print(f"PC: {cpu.pc: <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc)[0]: >3}")
+        print(f"PC: {cpu.pc: <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc): >5}")
