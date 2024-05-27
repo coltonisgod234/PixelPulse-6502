@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "*.rpy": "renpy",
-        "a": "c"
-    }
-}
