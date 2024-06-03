@@ -1,6 +1,7 @@
 import py65
 import py65.devices
 import py65.devices.mpu65c02
+import time
 
 import argparse
 
@@ -256,9 +257,9 @@ if __name__ == "__main__":
 
         frame_counter += 1
 
-        if frame_counter == 1024: 
+        if frame_counter == 512: 
            frame_counter = 0
            print("UPDATING IO")
            update_io()
 
-        print(f"PC: {cpu.pc: <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc): >5}")
+        print(f"PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc): <8}")
