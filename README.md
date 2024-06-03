@@ -1,6 +1,25 @@
 # PixelPulse 6502
 The PixelPulse 6502 Fantasy Computer is a fantasy computer inspired by the likes of the Apple ][e and the [Pico-8](https://www.lexaloffle.com/pico-8.php)
 
+
+# For installing the compiler
+
+First install [Scoop](https://scoop.sh/)
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser           
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+Then install cc65
+```
+scoop install cc65
+```
+
+Then run while in `.\asm` directory
+```
+.\compile.ps1
+```
+
 ## License Info
 This Is Licesnsed Under The [GNU GPL 3.0](https://github.com/coltonisgod234/PixelPulse-6502/blob/main/LICENSE)
 
