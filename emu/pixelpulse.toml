@@ -1,0 +1,10 @@
+[General]
+WindowName = "PixelPulse-6502"
+
+[Controls]
+button_a = "z"
+button_b = "x"
+dpad_up = "UP"
+dpad_down = "DOWN"
+dpad_left = "LEFT"
+dpad_right = "RIGHT"

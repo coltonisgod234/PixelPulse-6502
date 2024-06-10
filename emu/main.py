@@ -1,7 +1,7 @@
 import py65
 import py65.devices
 import py65.devices.mpu65c02
-import time
+from time import sleep
 
 import argparse
 
@@ -18,16 +18,20 @@ VRAM_LOCATION = 0x1000
 VRAM_END_LOCATION = 0x2FFF
 
 VOICES_COUNT = 4
-APU_VOLUME_BASE = 0.0
+APU_VOLUME_BASE = 0
 APU_VOLUME_STEP = 0.05
-APU_PITCH_BASE = 500
-APU_PITCH_STEP = 150
+APU_PITCH_BASE = 0
+APU_PITCH_STEP = 512
 APU_SAMPLE_RATE = 2096
 APU_LENGTH = 10
+
+colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
 
 parser = argparse.ArgumentParser(description="Emulator for the PixelPulse 6502")
 parser.add_argument("cart", metavar="cartridge", type=str, help="the cartdrige to load")
 args = parser.parse_args()
+
+print("Loading cart...")
 
 try: f = open(args.cart, "rb")
 except FileNotFoundError: 
@@ -44,13 +48,7 @@ for byte in range(len(program_bytes)):
     #print(f"{program_bytes[byte]:02X}", end=" ")
     program.append(int(program_bytes[byte]))
     
-print(len(program))
-
-#print(repr(program))
-
-# Print each byte in hexadecimal format
-#for byte in program:
-#    print(f"{byte:02X}", end=" ")
+print(f"[DEBUG] Cart is {len(program)} bytes.")
 
 class GameController:
     def __init__(self):
@@ -71,7 +69,7 @@ class GameController:
         self.pressed[buttonName] = False
 
     def convert_buttons_to_int(self):
-        pressed_int = 0
+        pressed_int = 0b00000000
         if self.pressed["right"]: pressed_int |= 0b00100000
         if self.pressed["left"]: pressed_int  |= 0b00010000
         if self.pressed["up"]: pressed_int    |= 0b00001000
@@ -81,8 +79,6 @@ class GameController:
 
         self.pressed_as_int = pressed_int
         return pressed_int
-
-colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
 
 def draw_pixel(x: int, y: int, col: int):
     rect = pygame.rect.Rect(x, y, 8, 8)
@@ -94,22 +90,22 @@ def get_high_nibble(x: int):
 def get_low_nibble(x: int):
     return x & 0b1111
 
-def generate_triangle_wave(length, frequency, volume=1.0):
+def generate_triangle_wave(length: int, frequency: int, volume=1.0):
     t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
     triangle_wave = 2 * np.abs(2 * (t * frequency - np.floor(t * frequency + 0.5)))
     return triangle_wave * volume
 
-def generate_sawtooth_wave(length, frequency, volume=1.0):
+def generate_sawtooth_wave(length, frequency: int, volume=1.0):
     t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
     sawtooth_wave = 2 * (t * frequency - np.floor(t * frequency))
     return sawtooth_wave * volume
 
-def generate_square_wave(length, frequency, volume=1.0):
+def generate_square_wave(length: int, frequency: int, volume=1.0):
     t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
     square_wave = np.sign(np.sin(2 * np.pi * frequency * t))
     return square_wave * volume
 
-def generate_sine_wave(length, frequency, volume=1.0):
+def generate_sine_wave(length: int, frequency: int, volume=1.0):
     t = np.linspace(0, length, int(length * APU_SAMPLE_RATE), endpoint=False)
     sine_wave = np.sin(2 * np.pi * frequency * t)
     return sine_wave * volume
@@ -125,8 +121,8 @@ def update_io():
         for channel in range(CHANNELS_COUNT):
             if voice == 0: # It's A Square Wave
                 # Calculate freqencies and audios and stuff
-                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
-                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel] + 4) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_VOLUME_STEP
                 buffer = generate_square_wave(APU_LENGTH, freq, vol)
                 sound = pygame.mixer.Sound(buffer)
 
@@ -134,8 +130,8 @@ def update_io():
             
             if voice == 1: # It's A Triangle Wave
                 # Calculate freqencies and audios and stuff
-                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
-                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel] + 8) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_VOLUME_STEP
                 buffer = generate_triangle_wave(APU_LENGTH, freq, vol)
                 sound = pygame.mixer.Sound(buffer)
 
@@ -143,8 +139,8 @@ def update_io():
 
             if voice == 2: # It's A Sawtooh Wave
                 # Calculate freqencies and audios and stuff
-                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
-                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel] + 12) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_VOLUME_STEP
                 buffer = generate_sawtooth_wave(APU_LENGTH, freq, vol)
                 sound = pygame.mixer.Sound(buffer)
 
@@ -152,15 +148,16 @@ def update_io():
             
             if voice == 3: # It's A Sine Wave
                 # Calculate freqencies and audios and stuff
-                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel]) * APU_PITCH_STEP
-                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_PITCH_STEP
+                freq = APU_PITCH_BASE + get_low_nibble(audio_ram[channel] + 16) * APU_PITCH_STEP
+                vol = APU_VOLUME_BASE + get_high_nibble(audio_ram[channel]) * APU_VOLUME_STEP
                 buffer = generate_sine_wave(APU_LENGTH, freq, vol)
                 sound = pygame.mixer.Sound(buffer)
 
                 sound.play(0)
 
-    # Update The Pallete
-    pass # A PLACEHOLDER
+    # Update The Palette
+    palette_ram = cpu.memory[0x3013:0x3023]
+    colors = palette_ram
 
     # Draw The Display
     vram = cpu.memory[VRAM_LOCATION:VRAM_END_LOCATION]
@@ -170,7 +167,7 @@ def update_io():
                 col = vram[y * 64 + x]
                 draw_pixel(x, y, col)
             except IndexError:
-                print("BAD PIXEL DATA. PROBABLY READ PAST VRAM")
+                print("[ERROR] Bad pixel data.")
 
     # Audio Format: SQW1,SQW2,SQW3,SQW4 (pitch+=15), TRW1,TRW2,TRW3,TRW4, (pitch+=15), ETC, ETC.
     # Byte Format: VVVV:PPPP
@@ -191,8 +188,9 @@ controller2 = GameController()
 
 # Initalize The Pygame
 pygame.display.init()
+pygame.display.set_caption("PixelPulse 6502")
 pygame.mixer.init(APU_SAMPLE_RATE)
-display = pygame.display.set_mode((128, 128))
+display = pygame.display.set_mode((DISPLAY_X_SIZE, DISPLAY_Y_SIZE))
 
 # Hi!!!
 #print("********************* BOOTUP *************************")
@@ -226,6 +224,11 @@ key_mappings = {
     pygame.K_RIGHT: "right"
 }
 
+print("[DEBUG] Loading reset vector...")
+
+cpu.pc = (program[0xfffd] << 8) | program[0xfffc]
+
+print(f"[DEBUG] Loaded to {cpu.pc}")
 
 if __name__ == "__main__":
     while running:
@@ -244,10 +247,9 @@ if __name__ == "__main__":
         # Execute The Instruction
         cpu.step()
 
-        # Check if the instruction is a breakpoint (BRK instruction)
+        # Check if the instruction is a break (BRK instruction)
         if cpu.memory[cpu.pc] == 0x00:
-            print("BREAK")
-            break
+            print("[DEBUG] Encountered BRK instruction.")
 
         display.fill((0, 0, 0))
 
@@ -255,9 +257,11 @@ if __name__ == "__main__":
 
         frame_counter += 1
 
-        if frame_counter == 512: 
+        if frame_counter == 1024: 
            frame_counter = 0
-           print("UPDATING IO")
+           print("[DEBUG] Updating IO")
            update_io()
 
-        print(f"PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <8} | C: {cpu.processorCycles}")
+        sleep(0.000244140625)
+
+        print(f"[DEBUG] PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <9} | C: {cpu.processorCycles}")

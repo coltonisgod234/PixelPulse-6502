@@ -1,8 +1,7 @@
 .segment "CODE"
-    ;.org $8000
     rst:
         dex
-        stx $3000
+        stx $3010
         jmp rst
 
     nmi:
