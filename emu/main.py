@@ -1,6 +1,7 @@
 import py65
 import py65.devices
 import py65.devices.mpu65c02
+import time
 
 import argparse
 
@@ -21,7 +22,7 @@ APU_VOLUME_BASE = 0.0
 APU_VOLUME_STEP = 0.05
 APU_PITCH_BASE = 500
 APU_PITCH_STEP = 150
-APU_SAMPLE_RATE = 2048
+APU_SAMPLE_RATE = 2096
 APU_LENGTH = 10
 
 parser = argparse.ArgumentParser(description="Emulator for the PixelPulse 6502")
@@ -72,11 +73,11 @@ class GameController:
     def convert_buttons_to_int(self):
         pressed_int = 0
         if self.pressed["right"]: pressed_int |= 0b00100000
-        if self.pressed["left"]: pressed_int |= 0b00010000
-        if self.pressed["up"]: pressed_int |= 0b00001000
-        if self.pressed["down"]: pressed_int |= 0b00000100
-        if self.pressed["a"]: pressed_int |= 0b00000010
-        if self.pressed["b"]: pressed_int |= 0b00000001
+        if self.pressed["left"]: pressed_int  |= 0b00010000
+        if self.pressed["up"]: pressed_int    |= 0b00001000
+        if self.pressed["down"]: pressed_int  |= 0b00000100
+        if self.pressed["a"]: pressed_int     |= 0b00000010
+        if self.pressed["b"]: pressed_int     |= 0b00000001
 
         self.pressed_as_int = pressed_int
         return pressed_int
@@ -184,9 +185,6 @@ def update_io():
 cpu = py65.devices.mpu65c02.MPU()
 cpu.memory[0x0000:0xFFFF] = program
 
-# We've Gotta Check The Reset Vector
-print(cpu.memory[0xFFFC:0xFFFD])
-
 # Initalize The Controllers
 controller1 = GameController()
 controller2 = GameController()
@@ -212,9 +210,8 @@ def get_instruction_from_memory(addr: int):
     i = dasm.instruction_at(addr)
 
     inst_fmt_opc = i[1]
-    inst_fmt_opr = i[0]
 
-    return [inst_fmt_opc, inst_fmt_opr]
+    return inst_fmt_opc
 
 running = True
 
@@ -228,6 +225,7 @@ key_mappings = {
     pygame.K_LEFT: "left",
     pygame.K_RIGHT: "right"
 }
+
 
 if __name__ == "__main__":
     while running:
@@ -257,9 +255,9 @@ if __name__ == "__main__":
 
         frame_counter += 1
 
-        if frame_counter == 1024: 
+        if frame_counter == 512: 
            frame_counter = 0
            print("UPDATING IO")
            update_io()
 
-        print(f"PC: {cpu.pc: <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | INSTRUCTION: {get_instruction_from_memory(cpu.pc)[0]: >3}")
+        print(f"PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <8} | C: {cpu.processorCycles}")
