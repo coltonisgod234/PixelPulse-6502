@@ -2,6 +2,8 @@
     rst:
         dex
         stx $3010
+        iny
+        iny
         jmp rst
 
     nmi:

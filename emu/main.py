@@ -1,11 +1,13 @@
+from re import DEBUG
 import py65
 import py65.devices
 import py65.devices.mpu65c02
-from time import sleep
+from time import sleep, monotonic
 
 import argparse
 
 import py65.disassembler
+import py65.monitor
 import pygame
 
 import numpy as np
@@ -22,14 +24,17 @@ APU_VOLUME_BASE = 0
 APU_VOLUME_STEP = 0.05
 APU_PITCH_BASE = 0
 APU_PITCH_STEP = 512
-APU_SAMPLE_RATE = 2096
+APU_SAMPLE_RATE = 44100
 APU_LENGTH = 10
 
 colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
 
 parser = argparse.ArgumentParser(description="Emulator for the PixelPulse 6502")
 parser.add_argument("cart", metavar="cartridge", type=str, help="the cartdrige to load")
+parser.add_argument("-D", action="store_true")
 args = parser.parse_args()
+
+DEBUG_MODE_MASK = args.D
 
 print("Loading cart...")
 
@@ -224,11 +229,22 @@ key_mappings = {
     pygame.K_RIGHT: "right"
 }
 
-print("[DEBUG] Loading reset vector...")
+# Reset our log
+log = open("pixelpulse.log", "w+")
+log.truncate(0)
 
-cpu.pc = (program[0xfffd] << 8) | program[0xfffc]
+# This is release mode, so just ignore it
+def dbg_print(msg):
+    if DEBUG_MODE_MASK: return 1
+    log.write(f"[DEBUG] {msg}\n")
+    print("[DEBUG]", msg)
+    return 0
 
-print(f"[DEBUG] Loaded to {cpu.pc}")
+dbg_print("Loading reset vector...")
+
+cpu.pc = (program[0xfffd] << 8) | program[0xfffc] # Don't ask... I don't even know...
+
+dbg_print(f"Loaded to {cpu.pc}")
 
 if __name__ == "__main__":
     while running:
@@ -244,24 +260,30 @@ if __name__ == "__main__":
             else:
                 controller1.release(button)
         
+        # Start timing (To get a delta time)
+        instruction_execution_start = monotonic()
+
         # Execute The Instruction
         cpu.step()
 
+        # Calculate the delta time
+        instruction_execution_detla = monotonic() - instruction_execution_start
+
+        #print(f"[DEBUG] START:{instruction_execution_start}, DELTA:{instruction_execution_detla}")
+
         # Check if the instruction is a break (BRK instruction)
         if cpu.memory[cpu.pc] == 0x00:
-            print("[DEBUG] Encountered BRK instruction.")
+            dbg_print("Encountered BRK instruction.")
 
         display.fill((0, 0, 0))
 
         pygame.display.flip()
 
         frame_counter += 1
+        if frame_counter == 1024:
+            frame_counter = 0
+            dbg_print("Updating IO")
+            update_io()
 
-        if frame_counter == 1024: 
-           frame_counter = 0
-           print("[DEBUG] Updating IO")
-           update_io()
-
-        sleep(0.000244140625)
-
-        print(f"[DEBUG] PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <9} | C: {cpu.processorCycles}")
+        dbg_print(f"PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <9} | C: {cpu.processorCycles}")
+        sleep(instruction_execution_detla)

@@ -20,7 +20,7 @@ Getting started is easy! Simply:
 ## How Do I Know Where To Start?
 Starting is hard, we all struggle with it. So I reccomend before trying anything to make a simple hello world program that just prints "HELLO WORLD" to the top left of the screen.
 
-# Installiong the SDK
+# Installing The SDK
 ## Windows
 First you need the cc65 toolchain, I reccomend installing scoop, open your start menu, search for "powershell" and press enter, then run:
 ```
@@ -41,7 +41,7 @@ In the root directory of the project run `pip install -r requirements.txt` somet
 The SDK is now installed
 
 ## MacOS
-Sorry, MacOS isn't supported, please use a Linux or Windows system
+Sorry, MacOS isn't supported and probably won't ever as I don't own a Mac, please use a Linux or Windows system
 
 ## I Made A Game, How Do I Share It?
 Sharing Games Is Easy, Just Go Over To The [Discussion](https://github.com/coltonisgod234/PixelPulse-6502/discussions/1) And Post Your Game's ROM In The Issues Tab!
