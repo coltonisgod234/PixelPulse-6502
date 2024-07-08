@@ -1,9 +1,7 @@
 .segment "CODE"
     rst:
-        dex
-        stx $3010
-        iny
-        iny
+        ldx #$00
+        ldy #$10
         jmp rst
 
     nmi:

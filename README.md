@@ -41,7 +41,7 @@ In the root directory of the project run `pip install -r requirements.txt` somet
 The SDK is now installed
 
 ## MacOS
-Sorry, MacOS isn't supported and probably won't ever as I don't own a Mac, please use a Linux or Windows system
+Sorry, MacOS isn't supported (offically) and probably won't ever as I don't own a Mac, please use a Linux or Windows system.
 
 ## I Made A Game, How Do I Share It?
 Sharing Games Is Easy, Just Go Over To The [Discussion](https://github.com/coltonisgod234/PixelPulse-6502/discussions/1) And Post Your Game's ROM In The Issues Tab!
