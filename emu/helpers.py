@@ -29,3 +29,6 @@ def get_high_nibble(x: int) -> int:
 
 def get_low_nibble(x: int) -> int:
     return x & 0b1111
+
+def is_multiple_of_2(n: int) -> bool:
+    return (n & 1) == 0

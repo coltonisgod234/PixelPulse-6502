@@ -1,4 +1,5 @@
 from time import perf_counter
+from typing import SupportsIndex
 
 from helpers import pixel_print
 
