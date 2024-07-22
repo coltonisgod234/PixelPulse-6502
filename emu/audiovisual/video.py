@@ -37,9 +37,13 @@ def extract_pixel_at_location(x: int, y: int, vram: list) -> int:
         return get_high_nibble(vram[y * DISPLAY_Y_SIZE + x])
 
 def tick_display(vram: list):
+    
     # Handle drawing the pixels
     for x in range(DISPLAY_X_SIZE):  # Loop through all the pixels
         for y in range(DISPLAY_Y_SIZE):  # Loop through all the pixels
+            if get_low_nibble(vram[y * DISPLAY_Y_SIZE + x]) == 0 and get_high_nibble(vram[y * DISPLAY_Y_SIZE + x]) == 0:
+                continue
+
             col = get_low_nibble(vram[y * DISPLAY_Y_SIZE + x])
             draw_pixel(x, y, col)
 

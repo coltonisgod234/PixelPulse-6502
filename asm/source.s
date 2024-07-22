@@ -7,12 +7,13 @@
 
     ; Reset subroutine
     rst:
-        ldx #$00         ; Initialize X register to 0
+        lda #$00         ; Initialize X register to 0
+        jmp loopy
     loopy:
         iny              ; Increment Y register
         cpy #$FF         ; Compare Y to 255 (hexadecimal $FF)
         bne loopy        ; Branch back to loopy if Y is not equal to 255
-        stx $1000, Y      ; Store X register value into memory address $1000 + Y
+        sta $1000, Y      ; Store X register value into memory address $1000 + Y
 
         jmp refresh_display ; Jump to refresh_display subroutine
         jmp rst           ; Infinite loop (jump to rst)
