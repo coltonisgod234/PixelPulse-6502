@@ -3,11 +3,12 @@ __pycache__/
 *.py[cod]
 
 # Caches and logs
-*.log
-*.cache
+*/**/*.log
+*/**/*.cache
 
 # Virtual environment
 venv/
+pixelpulse/
 
 # IDE files
 .vscode/

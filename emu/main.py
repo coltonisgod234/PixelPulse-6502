@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
             after_instruction()
         
-            pixel_print(f"PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <9} | C: {cpu.processorCycles: <3} | PS: {pixelStatusReg.get_all_status()} | {cpu.a}")
+            pixel_print(f"PC: {hex(cpu.pc): <5} | A: {cpu.a: <3} | X: {cpu.x: <3} | Y: {cpu.y: <3} | P: {bin(cpu.p): <10} | SP: {cpu.sp: <3} | P1: {bin(controller1.convert_buttons_to_int()): <8} | I: {get_instruction_from_memory(cpu.pc): <9} | C: {cpu.processorCycles: <3} | PS: {pixelStatusReg.get_all_status()}")
 
         # Cap the frame rate
         clock.tick(TARGET_FPS)
