@@ -43,5 +43,58 @@ The SDK is now installed
 ## MacOS
 Sorry, MacOS isn't supported (offically) and probably won't ever as I don't own a Mac, please use a Linux or Windows system.
 
+## **Create a Virtual Environment**
+
+   It's recommended to create a virtual environment to manage the project's dependencies separately. Run the following command to create a virtual environment named `venv`.
+
+   ```
+    python -m venv .venv
+   ```
+
+   This command will start the Streamlit server, and you should see a URL in the terminal that you can visit in your web browser to view the app.
+
+   Activate the virtual environment:
+
+   - On Windows:
+   ```
+   .venv/Scripts/activate
+   ```
+
+   - On macOS or Linux:
+   ```
+   source .venv/bin/activate
+   ```
+
+## **Install Dependencies**
+
+   Next, install pip-tools
+
+   ```
+   pip install pip-tools
+   ```
+    
+   If the `requirements.txt` file is not present, you may need to generate it from `requirements.in` using `pip-compile`:
+
+   ```
+    pip-compile requirements.in
+   ```
+
+   With the virtual environment activated and the `requirements.txt` file generated, install the project dependencies using the `requirements.txt` file.
+    - On Windows:
+    ```
+    ./.venv/Scripts/python.exe -m pip install -r requirements.txt
+    ```
+    - On macOS or Linux:
+    ```
+    
+    pip install -r requirements.txt
+    
+    OR
+    
+    ./.venv/bin/python -m pip install -r requirements.txt
+    
+    ```
+
+
 ## I Made A Game, How Do I Share It?
 Sharing Games Is Easy, Just Go Over To The [Discussion](https://github.com/coltonisgod234/PixelPulse-6502/discussions/1) And Post Your Game's ROM In The Issues Tab!
