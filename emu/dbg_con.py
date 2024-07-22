@@ -75,7 +75,7 @@ def dbg_console():
             print(f"A breakpoint with the name {cmd[1]} already exists")
             return 1
         else:
-            breakpoints[cmd[1]] = cmd[2]
+            breakpoints[cmd[1]] = int(cmd[2],16)
     
     if cmd[0] in ["lbp", "list-bps", "bps"]:
         print("Name           Value")

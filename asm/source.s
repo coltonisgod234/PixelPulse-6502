@@ -9,6 +9,7 @@
     rst:
         lda #$00         ; Initialize X register to 0
         jmp loopy
+    
     loopy:
         iny              ; Increment Y register
         cpy #$FF         ; Compare Y to 255 (hexadecimal $FF)
@@ -17,6 +18,7 @@
 
         jmp refresh_display ; Jump to refresh_display subroutine
         jmp rst           ; Infinite loop (jump to rst)
+    
     nmi:
         lda #$00 ; Debug statement
         rti
