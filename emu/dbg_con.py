@@ -1,7 +1,5 @@
-from typing import Any
 from cpu.cpuhelpers import config_cpu, get_instruction_from_memory
 import pygame
-from time import sleep, monotonic
 
 import argparse
 
@@ -24,7 +22,7 @@ def trace():
 
 def registers():
     print("AC | RX | RY | PC   |   NV-BDIZC | SP | IR")
-    print(f"{cpu.a:02X} | {cpu.x:02X} | {cpu.y:02X} | {cpu.pc:02X} | {bin(cpu.p):<10} | {cpu.sp:02X} | {get_instruction_from_memory(cpu.pc):<13}")
+    print(f"{cpu.a:02X} | {cpu.x:02X} | {cpu.y:02X} | {cpu.pc:02X} | {bin(cpu.p):<10} | {cpu.sp:02X} | {get_instruction_from_memory(cpu.pc, cpu):<13}")
 
 def step():
     cpu.step()
@@ -60,15 +58,15 @@ def dbg_console():
     if cmd[0] in ["d"]:
         try:
             addr = int(cmd[1], 16)
-            print(get_instruction_from_memory(addr))
+            print(get_instruction_from_memory(addr, cpu))
         except IndexError:
-            print(get_instruction_from_memory(cpu.pc))
+            print(get_instruction_from_memory(cpu.pc, cpu))
     
     if cmd[0] in ["dr"]:
         start = int(cmd[1], 16)
         end = int(cmd[2], 16)
         for i in range(start, end):
-            print(get_instruction_from_memory(i))
+            print(get_instruction_from_memory(i, cpu))
     
     if cmd[0] in ["bp"]:
         if cmd[1] in breakpoints.keys():

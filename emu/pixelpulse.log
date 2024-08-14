@@ -1,2 +1,810 @@
-[  00.20642509998288006]  debug       Cart is 0x10000 bytes.
-[  00.20689459994900972]  debug       Loaded to 32774
+[000.037065099997562356] [   find_directory@utils.helpers    ] debug     Searching for directory 'locale'
+[0000.03725469999699271] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\Documents\important_projects\PixelPulse-6502\emu\utils\helpers.py
+[000.037406799998279894] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\Documents\important_projects\PixelPulse-6502\emu\utils
+[0000.03750629999922239] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\Documents\important_projects\PixelPulse-6502\emu
+[0000.03762039999855915] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\Documents\important_projects\PixelPulse-6502
+[0000.03772249999747146] [        Undefined@Undefined        ] debug       Found directory C:\Users\Colton Wollinger\Documents\important_projects\PixelPulse-6502
+[0000.03788709999935236] [           (init)@__main__         ] debug     Set locale to en-CA
+[0000.03874349999750848] [       config_cpu@cpu.cpuhelpers   ] debug     Cart is 0x10000 bytes.
+[000.039414399998349836] [       config_cpu@cpu.cpuhelpers   ] debug     Loaded to 32774
+[0000.15827789999821107] [       (MainLoop)@__main__         ] debug     PC: 32776 | A: 0   | X: 0   | Y: 0   | P: 50       | SP: 255 | P1: 0        | P2: 0        | I: JMP $800b   | C: 2   | PS: 0b0
+[0000.15854529999705846] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 0   | P: 50       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 5   | PS: 0b0
+[00000.1590407999974559] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 1   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 7   | PS: 0b0
+[00000.1596676999979536] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 1   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 9   | PS: 0b0
+[00000.1598318999967887] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 1   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 12  | PS: 0b0
+[0000.16001939999841852] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 2   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 14  | PS: 0b0
+[0000.16016369999852031] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 2   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 16  | PS: 0b0
+[0000.16029169999819715] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 2   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 19  | PS: 0b0
+[0000.16042349999770522] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 3   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 21  | PS: 0b0
+[0000.16057979999823146] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 3   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 23  | PS: 0b0
+[0000.16070309999849997] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 3   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 26  | PS: 0b0
+[0000.16094219999649795] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 4   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 28  | PS: 0b0
+[0000.16107759999795235] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 4   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 30  | PS: 0b0
+[00000.1612180999982229] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 4   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 33  | PS: 0b0
+[0000.16134209999654558] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 5   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 35  | PS: 0b0
+[0000.16146439999647555] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 5   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 37  | PS: 0b0
+[0000.16156559999944875] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 5   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 40  | PS: 0b0
+[0000.16165879999971366] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 6   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 42  | PS: 0b0
+[00000.1617514999998093] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 6   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 44  | PS: 0b0
+[0000.16191629999957513] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 6   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 47  | PS: 0b0
+[0000.16203439999662805] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 7   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 49  | PS: 0b0
+[0000.16214639999816427] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 7   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 51  | PS: 0b0
+[00000.1622957999970822] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 7   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 54  | PS: 0b0
+[0000.16246339999997872] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 8   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 56  | PS: 0b0
+[0000.16259849999914877] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 8   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 58  | PS: 0b0
+[0000.16273939999882714] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 8   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 61  | PS: 0b0
+[0000.16288779999740655] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 9   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 63  | PS: 0b0
+[0000.16312189999734983] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 9   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 65  | PS: 0b0
+[0000.16466029999719467] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 9   | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 68  | PS: 0b0
+[0000.16484879999916302] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 10  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 70  | PS: 0b0
+[0000.16499929999918095] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 10  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 72  | PS: 0b0
+[0000.16516919999776292] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 10  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 75  | PS: 0b0
+[0000.16533290000006673] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 11  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 77  | PS: 0b0
+[0000.16546529999686754] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 11  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 79  | PS: 0b0
+[0000.16559589999815216] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 11  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 82  | PS: 0b0
+[0000.16574209999816958] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 12  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 84  | PS: 0b0
+[00000.1658508999971673] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 12  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 86  | PS: 0b0
+[00000.1659457999994629] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 12  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 89  | PS: 0b0
+[0000.16606319999846164] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 13  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 91  | PS: 0b0
+[0000.16617549999864423] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 13  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 93  | PS: 0b0
+[0000.16627489999882528] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 13  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 96  | PS: 0b0
+[0000.16637139999875217] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 14  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 98  | PS: 0b0
+[0000.16646659999969415] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 14  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 100 | PS: 0b0
+[0000.16656069999953615] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 14  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 103 | PS: 0b0
+[0000.16665199999988545] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 15  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 105 | PS: 0b0
+[00000.1667734999973618] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 15  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 107 | PS: 0b0
+[00000.1668796999983897] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 15  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 110 | PS: 0b0
+[00000.1669763999998395] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 16  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 112 | PS: 0b0
+[0000.16707119999773568] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 16  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 114 | PS: 0b0
+[00000.1671913999998651] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 16  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 117 | PS: 0b0
+[0000.16730979999920237] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 17  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 119 | PS: 0b0
+[0000.16742279999743914] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 17  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 121 | PS: 0b0
+[00000.1675234999966051] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 17  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 124 | PS: 0b0
+[0000.16761739999856218] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 18  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 126 | PS: 0b0
+[00000.1677109999982349] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 18  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 128 | PS: 0b0
+[0000.16780369999833056] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 18  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 131 | PS: 0b0
+[0000.16789719999724184] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 19  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 133 | PS: 0b0
+[0000.16799519999767654] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 19  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 135 | PS: 0b0
+[0000.16810349999650498] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 19  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 138 | PS: 0b0
+[0000.16823459999795887] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 20  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 140 | PS: 0b0
+[0000.16834889999881852] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 20  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 142 | PS: 0b0
+[00000.1684923999964667] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 20  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 145 | PS: 0b0
+[0000.16860079999969457] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 21  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 147 | PS: 0b0
+[00000.1714767999983451] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 21  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 149 | PS: 0b0
+[0000.17166029999862076] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 21  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 152 | PS: 0b0
+[0000.17182169999796315] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 22  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 154 | PS: 0b0
+[0000.17198919999646023] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 22  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 156 | PS: 0b0
+[0000.17213709999850835] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 22  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 159 | PS: 0b0
+[0000.17227749999801745] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 23  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 161 | PS: 0b0
+[0000.17242419999820413] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 23  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 163 | PS: 0b0
+[0000.17254179999872576] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 23  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 166 | PS: 0b0
+[00000.1726736999989953] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 24  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 168 | PS: 0b0
+[0000.17277939999985392] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 24  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 170 | PS: 0b0
+[0000.17287499999656575] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 24  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 173 | PS: 0b0
+[0000.17299719999937224] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 25  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 175 | PS: 0b0
+[00000.1732092999991437] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 25  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 177 | PS: 0b0
+[0000.17333799999687471] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 25  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 180 | PS: 0b0
+[0000.17345839999688906] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 26  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 182 | PS: 0b0
+[00000.1735789999984263] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 26  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 184 | PS: 0b0
+[0000.17368509999869275] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 26  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 187 | PS: 0b0
+[0000.17378099999768892] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 27  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 189 | PS: 0b0
+[0000.17387669999880018] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 27  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 191 | PS: 0b0
+[00000.1739769999985583] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 27  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 194 | PS: 0b0
+[0000.17407519999687793] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 28  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 196 | PS: 0b0
+[0000.17417119999663555] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 28  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 198 | PS: 0b0
+[0000.17427759999918635] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 28  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 201 | PS: 0b0
+[0000.17440389999683248] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 29  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 203 | PS: 0b0
+[0000.17456619999938994] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 29  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 205 | PS: 0b0
+[000000.174697999998898] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 29  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 208 | PS: 0b0
+[0000.17483099999662954] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 30  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 210 | PS: 0b0
+[0000.17496839999876102] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 30  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 212 | PS: 0b0
+[0000.17511519999970915] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 30  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 215 | PS: 0b0
+[0000.17525089999980992] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 31  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 217 | PS: 0b0
+[0000.17536759999711649] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 31  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 219 | PS: 0b0
+[0000.17550419999679434] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 31  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 222 | PS: 0b0
+[0000.17561769999883836] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 32  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 224 | PS: 0b0
+[0000.17574149999927613] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 32  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 226 | PS: 0b0
+[00000.1758620999971754] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 32  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 229 | PS: 0b0
+[0000.17598779999752878] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 33  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 231 | PS: 0b0
+[0000.17611529999703635] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 33  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 233 | PS: 0b0
+[0000.17623529999764287] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 33  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 236 | PS: 0b0
+[00000.1763621999998577] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 34  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 238 | PS: 0b0
+[0000.17649189999792725] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 34  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 240 | PS: 0b0
+[00000.1766046999982791] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 34  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 243 | PS: 0b0
+[0000.17671499999778462] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 35  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 245 | PS: 0b0
+[0000.17683899999974528] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 35  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 247 | PS: 0b0
+[00000.1769460999967123] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 35  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 250 | PS: 0b0
+[0000.17704809999850113] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 36  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 252 | PS: 0b0
+[0000.17714739999792073] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 36  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 254 | PS: 0b0
+[0000.17727429999649758] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 36  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 257 | PS: 0b0
+[0000.17739159999837284] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 37  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 259 | PS: 0b0
+[0000.17752349999864236] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 37  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 261 | PS: 0b0
+[0000.17766299999857438] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 37  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 264 | PS: 0b0
+[0000.17778359999647364] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 38  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 266 | PS: 0b0
+[00000.1779216999966593] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 38  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 268 | PS: 0b0
+[0000.17811989999972866] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 38  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 271 | PS: 0b0
+[000000.178253299996868] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 39  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 273 | PS: 0b0
+[00000.1783746999972209] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 39  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 275 | PS: 0b0
+[00000.1785007999969821] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 39  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 278 | PS: 0b0
+[00000.1786225999967428] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 40  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 280 | PS: 0b0
+[0000.17872539999734727] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 40  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 282 | PS: 0b0
+[0000.17882949999693665] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 40  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 285 | PS: 0b0
+[0000.18714839999665855] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 41  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 287 | PS: 0b0
+[0000.18737770000007004] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 41  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 289 | PS: 0b0
+[0000.18753279999873484] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 41  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 292 | PS: 0b0
+[0000.18766019999748096] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 42  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 294 | PS: 0b0
+[0000.18778789999851142] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 42  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 296 | PS: 0b0
+[0000.18792369999937364] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 42  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 299 | PS: 0b0
+[0000.18807389999710722] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 43  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 301 | PS: 0b0
+[00000.1882296999974642] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 43  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 303 | PS: 0b0
+[00000.1884232999982487] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 43  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 306 | PS: 0b0
+[0000.18854579999970156] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 44  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 308 | PS: 0b0
+[00000.1886882999970112] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 44  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 310 | PS: 0b0
+[0000.18882139999914216] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 44  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 313 | PS: 0b0
+[00000.1889271000000008] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 45  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 315 | PS: 0b0
+[0000.18904219999967609] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 45  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 317 | PS: 0b0
+[00000.1891641999973217] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 45  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 320 | PS: 0b0
+[0000.18928199999936623] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 46  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 322 | PS: 0b0
+[0000.18941669999912847] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 46  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 324 | PS: 0b0
+[0000.18952939999871887] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 46  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 327 | PS: 0b0
+[0000.18964149999737856] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 47  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 329 | PS: 0b0
+[0000.18974969999908353] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 47  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 331 | PS: 0b0
+[0000.18984439999985625] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 47  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 334 | PS: 0b0
+[0000.18995909999648575] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 48  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 336 | PS: 0b0
+[0000.19009629999709432] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 48  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 338 | PS: 0b0
+[0000.19022899999981746] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 48  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 341 | PS: 0b0
+[0000.19035149999763235] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 49  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 343 | PS: 0b0
+[000000.190456099997391] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 49  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 345 | PS: 0b0
+[0000.19056019999698037] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 49  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 348 | PS: 0b0
+[0000.19065839999893797] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 50  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 350 | PS: 0b0
+[0000.19075579999844194] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 50  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 352 | PS: 0b0
+[00000.1908505999999761] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 50  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 355 | PS: 0b0
+[0000.19097779999719933] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 51  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 357 | PS: 0b0
+[00000.1910866999969585] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 51  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 359 | PS: 0b0
+[0000.19120709999697283] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 51  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 362 | PS: 0b0
+[00000.1913466999976663] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 52  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 364 | PS: 0b0
+[0000.19145279999793274] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 52  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 366 | PS: 0b0
+[0000.19154859999980545] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 52  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 369 | PS: 0b0
+[0000.19164180000007036] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 53  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 371 | PS: 0b0
+[0000.19173349999982747] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 53  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 373 | PS: 0b0
+[0000.19182269999873824] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 53  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 376 | PS: 0b0
+[0000.19191269999646465] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 54  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 378 | PS: 0b0
+[0000.19204549999994924] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 54  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 380 | PS: 0b0
+[00000.1921740999969188] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 54  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 383 | PS: 0b0
+[0000.19229409999752534] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 55  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 385 | PS: 0b0
+[0000.19241369999872404] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 55  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 387 | PS: 0b0
+[00000.1925228000000061] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 55  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 390 | PS: 0b0
+[0000.19275049999851035] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 56  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 392 | PS: 0b0
+[00000.1928922999977658] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 56  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 394 | PS: 0b0
+[0000.19400199999654433] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 56  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 397 | PS: 0b0
+[0000.19416679999994813] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 57  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 399 | PS: 0b0
+[0000.19434269999692333] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 57  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 401 | PS: 0b0
+[000000.194513200000074] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 57  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 404 | PS: 0b0
+[0000.19464909999805968] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 58  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 406 | PS: 0b0
+[0000.19478779999917606] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 58  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 408 | PS: 0b0
+[00000.1949042999985977] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 58  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 411 | PS: 0b0
+[00000.1950483999971766] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 59  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 413 | PS: 0b0
+[00000.1951690999994753] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 59  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 415 | PS: 0b0
+[0000.19529319999855943] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 59  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 418 | PS: 0b0
+[00000.1954249999980675] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 60  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 420 | PS: 0b0
+[0000.19554889999926672] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 60  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 422 | PS: 0b0
+[00000.1956611999994493] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 60  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 425 | PS: 0b0
+[0000000.19578299999921] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 61  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 427 | PS: 0b0
+[0000.19589969999651657] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 61  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 429 | PS: 0b0
+[0000.19600599999830592] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 61  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 432 | PS: 0b0
+[0000.20406629999706638] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 62  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 434 | PS: 0b0
+[0000.20424149999962538] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 62  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 436 | PS: 0b0
+[00000.2043610999971861] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 62  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 439 | PS: 0b0
+[0000.20450419999906444] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 63  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 441 | PS: 0b0
+[0000.20463639999798033] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 63  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 443 | PS: 0b0
+[0000.20474299999841605] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 63  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 446 | PS: 0b0
+[00000.2053431999993336] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 64  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 448 | PS: 0b0
+[0000.20549649999884423] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 64  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 450 | PS: 0b0
+[0000.20564069999818457] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 64  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 453 | PS: 0b0
+[0000.20578889999887906] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 65  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 455 | PS: 0b0
+[0000.20602969999890774] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 65  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 457 | PS: 0b0
+[0000.20615189999807626] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 65  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 460 | PS: 0b0
+[0000.20626269999775104] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 66  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 462 | PS: 0b0
+[00000.2063795999965805] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 66  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 464 | PS: 0b0
+[0000.20653159999710624] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 66  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 467 | PS: 0b0
+[0000.20667969999703928] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 67  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 469 | PS: 0b0
+[0000.20681929999773274] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 67  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 471 | PS: 0b0
+[0000.20693649999884656] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 67  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 474 | PS: 0b0
+[0000.20705549999911455] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 68  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 476 | PS: 0b0
+[00000.2071708999974362] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 68  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 478 | PS: 0b0
+[0000.20727269999770215] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 68  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 481 | PS: 0b0
+[0000.20737289999669883] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 69  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 483 | PS: 0b0
+[0000.20746929999950225] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 69  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 485 | PS: 0b0
+[0000.20756149999942863] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 69  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 488 | PS: 0b0
+[00000.2076528999969014] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 70  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 490 | PS: 0b0
+[0000.20774409999648924] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 70  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 492 | PS: 0b0
+[00000.2078347999995458] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 70  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 495 | PS: 0b0
+[00000.2079256999968493] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 71  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 497 | PS: 0b0
+[00000.2080406999994011] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 71  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 499 | PS: 0b0
+[0000.20815319999746862] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 71  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 502 | PS: 0b0
+[0000.20826069999748142] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 72  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 504 | PS: 0b0
+[0000.20838779999758117] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 72  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 506 | PS: 0b0
+[0000.20848929999920074] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 72  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 509 | PS: 0b0
+[0000.20858489999955054] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 73  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 511 | PS: 0b0
+[0000.20868159999736235] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 73  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 513 | PS: 0b0
+[000000.208775399998558] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 73  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 516 | PS: 0b0
+[0000.20886759999848437] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 74  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 518 | PS: 0b0
+[0000.20896439999705763] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 74  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 520 | PS: 0b0
+[0000.20908369999960996] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 74  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 523 | PS: 0b0
+[0000.20922559999962687] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 75  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 525 | PS: 0b0
+[0000.20935309999913443] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 75  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 527 | PS: 0b0
+[0000.20946169999660924] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 75  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 530 | PS: 0b0
+[00000.2095683999978064] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 76  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 532 | PS: 0b0
+[0000.20967659999951138] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 76  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 534 | PS: 0b0
+[0000.20980199999758042] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 76  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 537 | PS: 0b0
+[0000.20991619999767863] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 77  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 539 | PS: 0b0
+[0000.21002989999760757] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 77  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 541 | PS: 0b0
+[0000.21014849999846774] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 77  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 544 | PS: 0b0
+[00000.2102599999998347] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 78  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 546 | PS: 0b0
+[0000.21038119999866467] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 78  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 548 | PS: 0b0
+[0000.21054049999656854] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 78  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 551 | PS: 0b0
+[00000.2106350999965798] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 79  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 553 | PS: 0b0
+[0000.21072849999836762] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 79  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 555 | PS: 0b0
+[0000.21082599999863305] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 79  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 558 | PS: 0b0
+[0000.21096559999932651] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 80  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 560 | PS: 0b0
+[0000.21110769999722834] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 80  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 562 | PS: 0b0
+[0000.21124369999961345] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 80  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 565 | PS: 0b0
+[0000.21136289999776636] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 81  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 567 | PS: 0b0
+[0000.21149449999938952] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 81  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 569 | PS: 0b0
+[0000.21162449999974342] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 81  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 572 | PS: 0b0
+[0000.21176809999815305] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 82  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 574 | PS: 0b0
+[0000.21189830000002985] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 82  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 576 | PS: 0b0
+[0000.21201669999936712] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 82  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 579 | PS: 0b0
+[00000.2207444999985455] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 83  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 581 | PS: 0b0
+[0000.22094369999831542] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 83  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 583 | PS: 0b0
+[0000.22109889999774168] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 83  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 586 | PS: 0b0
+[00000.2212374999980966] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 84  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 588 | PS: 0b0
+[00000.2213668999975198] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 84  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 590 | PS: 0b0
+[0000.22150549999787472] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 84  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 593 | PS: 0b0
+[0000.22165769999992335] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 85  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 595 | PS: 0b0
+[0000.22178299999723095] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 85  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 597 | PS: 0b0
+[0000.22190649999902234] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 85  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 600 | PS: 0b0
+[00000.2220361999970919] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 86  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 602 | PS: 0b0
+[0000.22216439999829163] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 86  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 604 | PS: 0b0
+[0000.22228269999686745] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 86  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 607 | PS: 0b0
+[0000.22239739999713493] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 87  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 609 | PS: 0b0
+[0000.22251739999774145] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 87  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 611 | PS: 0b0
+[0000.22261999999682303] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 87  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 614 | PS: 0b0
+[00000.2227327000000514] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 88  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 616 | PS: 0b0
+[00000.2228378999971028] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 88  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 618 | PS: 0b0
+[0000.22308789999806322] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 88  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 621 | PS: 0b0
+[0000.22322029999850201] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 89  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 623 | PS: 0b0
+[0000.22333379999690806] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 89  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 625 | PS: 0b0
+[0000.22344319999683648] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 89  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 628 | PS: 0b0
+[0000.22356899999795132] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 90  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 630 | PS: 0b0
+[0000.22388359999968088] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 90  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 632 | PS: 0b0
+[00000.2240308999971603] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 90  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 635 | PS: 0b0
+[0000.22428169999693637] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 91  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 637 | PS: 0b0
+[0000.22442769999906886] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 91  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 639 | PS: 0b0
+[0000.22456729999976233] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 91  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 642 | PS: 0b0
+[0000.22472409999681986] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 92  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 644 | PS: 0b0
+[00000.2248433999993722] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 92  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 646 | PS: 0b0
+[0000.22496979999777977] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 92  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 649 | PS: 0b0
+[0000.22510219999821857] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 93  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 651 | PS: 0b0
+[0000.22522989999924903] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 93  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 653 | PS: 0b0
+[0000.22534919999816339] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 93  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 656 | PS: 0b0
+[0000.22547839999970165] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 94  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 658 | PS: 0b0
+[0000.22560459999658633] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 94  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 660 | PS: 0b0
+[0000.22571509999761474] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 94  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 663 | PS: 0b0
+[0000.22581929999796557] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 95  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 665 | PS: 0b0
+[0000.22592279999662424] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 95  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 667 | PS: 0b0
+[0000.22605029999976978] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 95  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 670 | PS: 0b0
+[0000.22616009999910602] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 96  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 672 | PS: 0b0
+[0000.22629439999946044] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 96  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 674 | PS: 0b0
+[0000.22641249999651336] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 96  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 677 | PS: 0b0
+[0000.22653519999948912] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 97  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 679 | PS: 0b0
+[0000.22665439999764203] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 97  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 681 | PS: 0b0
+[0000.22683309999774792] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 97  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 684 | PS: 0b0
+[000000.226988699996582] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 98  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 686 | PS: 0b0
+[0000.22712889999820618] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 98  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 688 | PS: 0b0
+[00000.2272549999979674] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 98  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 691 | PS: 0b0
+[0000.22736539999823435] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 99  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 693 | PS: 0b0
+[0000.22748689999934868] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 99  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 695 | PS: 0b0
+[0000.22759439999936149] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 99  | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 698 | PS: 0b0
+[0000.22769369999878109] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 100 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 700 | PS: 0b0
+[000000.227786899999046] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 100 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 702 | PS: 0b0
+[00000.2278779999978724] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 100 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 705 | PS: 0b0
+[0000.22799039999881643] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 101 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 707 | PS: 0b0
+[00000.2281022999995912] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 101 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 709 | PS: 0b0
+[0000.22821559999647434] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 101 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 712 | PS: 0b0
+[000000.228341799996997] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 102 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 714 | PS: 0b0
+[0000.22846729999946547] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 102 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 716 | PS: 0b0
+[00000.2379189999992377] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 102 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 719 | PS: 0b0
+[00000.2381446999970649] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 103 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 721 | PS: 0b0
+[0000.23831479999716976] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 103 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 723 | PS: 0b0
+[0000.23846249999769498] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 103 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 726 | PS: 0b0
+[0000.23858159999872441] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 104 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 728 | PS: 0b0
+[0000.23875219999899855] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 104 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 730 | PS: 0b0
+[0000.23887809999723686] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 104 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 733 | PS: 0b0
+[0000.23900159999902826] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 105 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 735 | PS: 0b0
+[0000.23916039999676286] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 105 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 737 | PS: 0b0
+[00000.2392943999984709] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 105 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 740 | PS: 0b0
+[0000.23943299999882584] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 106 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 742 | PS: 0b0
+[0000.23954279999816208] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 106 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 744 | PS: 0b0
+[0000.23963809999986552] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 106 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 747 | PS: 0b0
+[0000.23973109999860753] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 107 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 749 | PS: 0b0
+[0000.23982429999887245] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 107 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 751 | PS: 0b0
+[0000.23991429999659886] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 107 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 754 | PS: 0b0
+[0000.24003149999771267] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 108 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 756 | PS: 0b0
+[0000.24016299999857438] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 108 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 758 | PS: 0b0
+[0000.24029629999859026] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 108 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 761 | PS: 0b0
+[0000.24042089999784366] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 109 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 763 | PS: 0b0
+[0000.24052389999997104] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 109 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 765 | PS: 0b0
+[0000.24062599999888334] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 109 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 768 | PS: 0b0
+[00000.2407171999984712] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 110 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 770 | PS: 0b0
+[0000.24080939999839757] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 110 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 772 | PS: 0b0
+[00000.2409014999975625] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 110 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 775 | PS: 0b0
+[00000.2410379999964789] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 111 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 777 | PS: 0b0
+[0000.24130549999972573] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 111 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 779 | PS: 0b0
+[000000.241461799996614] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 111 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 782 | PS: 0b0
+[0000.24159619999772985] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 112 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 784 | PS: 0b0
+[00000.2417600999979186] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 112 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 786 | PS: 0b0
+[00000.2421366999988095] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 112 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 789 | PS: 0b0
+[0000.24240289999943343] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 113 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 791 | PS: 0b0
+[0000.24257789999683155] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 113 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 793 | PS: 0b0
+[0000.24277839999922435] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 113 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 796 | PS: 0b0
+[0000.24292229999991832] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 114 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 798 | PS: 0b0
+[0000.24312629999985802] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 114 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 800 | PS: 0b0
+[0000.24326599999767495] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 114 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 803 | PS: 0b0
+[0000.24353419999897596] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 115 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 805 | PS: 0b0
+[0000.24368109999704757] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 115 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 807 | PS: 0b0
+[0000.24382409999816446] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 115 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 810 | PS: 0b0
+[00000.2439967999998771] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 116 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 812 | PS: 0b0
+[0000.24411749999853782] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 116 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 814 | PS: 0b0
+[0000.24425019999762299] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 116 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 817 | PS: 0b0
+[00000.2444281999996747] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 117 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 819 | PS: 0b0
+[0000.24454169999808073] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 117 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 821 | PS: 0b0
+[00000.2446602999989409] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 117 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 824 | PS: 0b0
+[0000.24476489999869955] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 118 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 826 | PS: 0b0
+[0000.24486109999998007] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 118 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 828 | PS: 0b0
+[00000.2450460000000021] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 118 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 831 | PS: 0b0
+[0000.24519409999993513] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 119 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 833 | PS: 0b0
+[0000.24532429999817396] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 119 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 835 | PS: 0b0
+[0000.24548249999861582] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 119 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 838 | PS: 0b0
+[0000.24562569999761763] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 120 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 840 | PS: 0b0
+[00000.2457652999983111] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 120 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 842 | PS: 0b0
+[0000.24589099999866448] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 120 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 845 | PS: 0b0
+[00000.2460172999999486] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 121 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 847 | PS: 0b0
+[0000.24613229999886244] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 121 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 849 | PS: 0b0
+[000000.246235999999044] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 121 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 852 | PS: 0b0
+[0000.24633699999685632] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 122 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 854 | PS: 0b0
+[00000.2464968999993289] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 122 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 856 | PS: 0b0
+[0000.24661079999714275] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 122 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 859 | PS: 0b0
+[00000.2467663999996148] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 123 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 861 | PS: 0b0
+[0000.24689359999683802] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 123 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 863 | PS: 0b0
+[0000.25557320000007167] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 123 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 866 | PS: 0b0
+[0000.25578179999865824] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 124 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 868 | PS: 0b0
+[00000.2559159999982512] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 124 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 870 | PS: 0b0
+[00000.2560379999995348] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 124 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 873 | PS: 0b0
+[0000.25618389999726787] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 125 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 875 | PS: 0b0
+[00000.2563252999971155] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 125 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 877 | PS: 0b0
+[00000.2564461999972991] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 125 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 880 | PS: 0b0
+[00000.2565727999972296] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 126 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 882 | PS: 0b0
+[00000.2567128999980923] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 126 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 884 | PS: 0b0
+[0000.25684569999793894] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 126 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 887 | PS: 0b0
+[00000.2569850999971095] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 127 | P: 48       | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 889 | PS: 0b0
+[00000.2571081999994931] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 127 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 891 | PS: 0b0
+[0000.25728499999968335] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 127 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 894 | PS: 0b0
+[000000.257410099999106] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 128 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 896 | PS: 0b0
+[00000.2575375999986136] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 128 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 898 | PS: 0b0
+[0000.25764779999735765] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 128 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 901 | PS: 0b0
+[0000.25775269999940065] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 129 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 903 | PS: 0b0
+[00000.2578550999969593] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 129 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 905 | PS: 0b0
+[00000.2579494999990857] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 129 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 908 | PS: 0b0
+[00000.2580450999994355] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 130 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 910 | PS: 0b0
+[0000.25813639999978477] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 130 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 912 | PS: 0b0
+[0000.25824529999954393] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 130 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 915 | PS: 0b0
+[00000.2583548999973573] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 131 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 917 | PS: 0b0
+[000000.258459299999231] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 131 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 919 | PS: 0b0
+[0000.25855849999788916] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 131 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 922 | PS: 0b0
+[0000.25868049999917275] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 132 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 924 | PS: 0b0
+[0000.25877809999656165] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 132 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 926 | PS: 0b0
+[0000.25887109999894165] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 132 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 929 | PS: 0b0
+[00000.2589652999995451] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 133 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 931 | PS: 0b0
+[00000.2590894999993907] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 133 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 933 | PS: 0b0
+[0000.25921269999889773] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 133 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 936 | PS: 0b0
+[000000.259379799997987] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 134 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 938 | PS: 0b0
+[00000.2595270999991044] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 134 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 940 | PS: 0b0
+[0000.25980619999972987] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 134 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 943 | PS: 0b0
+[0000.26068239999949583] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 135 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 945 | PS: 0b0
+[00000.2608699999982491] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 135 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 947 | PS: 0b0
+[0000.26103759999750764] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 135 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 950 | PS: 0b0
+[0000.26117429999794695] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 136 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 952 | PS: 0b0
+[00000.2612903999979608] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 136 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 954 | PS: 0b0
+[0000.26141269999789074] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 136 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 957 | PS: 0b0
+[00000.2615540999977384] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 137 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 959 | PS: 0b0
+[00000.2617298999975901] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 137 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 961 | PS: 0b0
+[0000.26184989999819663] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 137 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 964 | PS: 0b0
+[000000.261966999998549] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 138 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 966 | PS: 0b0
+[0000.26208719999704044] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 138 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 968 | PS: 0b0
+[00000.2622443000000203] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 138 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 971 | PS: 0b0
+[000000.262368299998343] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 139 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 973 | PS: 0b0
+[00000.2624952999976813] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 139 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 975 | PS: 0b0
+[00000.2626172999989649] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 139 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 978 | PS: 0b0
+[00000.2627203999982157] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 140 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 980 | PS: 0b0
+[0000.26284299999679206] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 140 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 982 | PS: 0b0
+[0000.26297819999672356] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 140 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 985 | PS: 0b0
+[0000.26308739999876707] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 141 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 987 | PS: 0b0
+[0000.26319889999649604] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 141 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 989 | PS: 0b0
+[00000.2633115999997244] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 141 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 992 | PS: 0b0
+[0000.26352090000000317] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 142 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 994 | PS: 0b0
+[0000.26365859999714303] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 142 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 996 | PS: 0b0
+[0000.26377989999673446] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 142 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 999 | PS: 0b0
+[0000.26391359999979613] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 143 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1001 | PS: 0b0
+[0000.27181299999938346] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 143 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1003 | PS: 0b0
+[00000.2723362999968231] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 143 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1006 | PS: 0b0
+[00000.2725687999991351] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 144 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1008 | PS: 0b0
+[00000.2728696999984095] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 144 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1010 | PS: 0b0
+[00000.2730639999972482] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 144 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1013 | PS: 0b0
+[0000.27331299999787007] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 145 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1015 | PS: 0b0
+[0000.27349599999797647] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 145 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1017 | PS: 0b0
+[0000.27364509999824804] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 145 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1020 | PS: 0b0
+[0000.27377729999716394] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 146 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1022 | PS: 0b0
+[00000.2739127999993798] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 146 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1024 | PS: 0b0
+[00000.2740306999985478] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 146 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1027 | PS: 0b0
+[00000.2741461999976309] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 147 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1029 | PS: 0b0
+[00000.2742698999973072] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 147 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1031 | PS: 0b0
+[0000.27439179999782937] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 147 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1034 | PS: 0b0
+[00000.2745043999966583] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 148 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1036 | PS: 0b0
+[0000.27460169999903883] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 148 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1038 | PS: 0b0
+[0000.27471739999964484] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 148 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1041 | PS: 0b0
+[0000.27484349999940605] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 149 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1043 | PS: 0b0
+[00000.2749673999969673] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 149 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1045 | PS: 0b0
+[00000.2750746999990952] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 149 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1048 | PS: 0b0
+[00000.2751849999986007] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 150 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1050 | PS: 0b0
+[00000.2752855999970052] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 150 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1052 | PS: 0b0
+[00000.2754014999991341] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 150 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1055 | PS: 0b0
+[0000.27549999999973807] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 151 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1057 | PS: 0b0
+[00000.2756019999978889] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 151 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1059 | PS: 0b0
+[0000.27569799999764655] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 151 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1062 | PS: 0b0
+[00000.2757934999972349] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 152 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1064 | PS: 0b0
+[0000.27588859999741544] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 152 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1066 | PS: 0b0
+[00000.2759918999981892] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 152 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1069 | PS: 0b0
+[0000.27610509999794886] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 153 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1071 | PS: 0b0
+[0000.27626069999678293] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 153 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1073 | PS: 0b0
+[00000.2763736999986577] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 153 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1076 | PS: 0b0
+[00000.2764850999992632] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 154 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1078 | PS: 0b0
+[00000.2765843999986828] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 154 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1080 | PS: 0b0
+[0000.27668419999827165] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 154 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1083 | PS: 0b0
+[0000.27678159999777563] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 155 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1085 | PS: 0b0
+[00000.2768750999966869] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 155 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1087 | PS: 0b0
+[000000.276968999998644] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 155 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1090 | PS: 0b0
+[0000.27708769999662763] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 156 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1092 | PS: 0b0
+[0000.27721769999698154] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 156 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1094 | PS: 0b0
+[0000.27735519999987446] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 156 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1097 | PS: 0b0
+[0000.27749869999752264] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 157 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1099 | PS: 0b0
+[00000.2777394999975513] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 157 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1101 | PS: 0b0
+[0000.27786359999663546] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 157 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1104 | PS: 0b0
+[00000.2785733999990043] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 158 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1106 | PS: 0b0
+[00000.2787140000000363] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 158 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1108 | PS: 0b0
+[0000.27906439999787835] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 158 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1111 | PS: 0b0
+[0000.27919679999831715] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 159 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1113 | PS: 0b0
+[00000.2793564999992668] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 159 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1115 | PS: 0b0
+[00000.2794995999975072] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 159 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1118 | PS: 0b0
+[00000.2796814999965136] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 160 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1120 | PS: 0b0
+[0000.27984099999957834] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 160 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1122 | PS: 0b0
+[0000.28003349999926286] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 160 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1125 | PS: 0b0
+[00000.2802155999997922] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 161 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1127 | PS: 0b0
+[0000.28037509999921895] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 161 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1129 | PS: 0b0
+[00000.2805387999978848] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 161 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1132 | PS: 0b0
+[0000.28066319999925327] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 162 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1134 | PS: 0b0
+[00000.2808108999997785] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 162 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1136 | PS: 0b0
+[0000.28094509999937145] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 162 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1139 | PS: 0b0
+[00000.2810706999989634] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 163 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1141 | PS: 0b0
+[0000.28119709999737097] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 163 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1143 | PS: 0b0
+[0000.28131269999721553] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 163 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1146 | PS: 0b0
+[0000.28142379999917466] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 164 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1148 | PS: 0b0
+[0000.28154219999851193] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 164 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1150 | PS: 0b0
+[00000.2890447999998287] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 164 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1153 | PS: 0b0
+[0000.28922959999908926] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 165 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1155 | PS: 0b0
+[00000.2893683999973291] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 165 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1157 | PS: 0b0
+[0000.28950629999962985] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 165 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1160 | PS: 0b0
+[0000.28962359999786713] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 166 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1162 | PS: 0b0
+[0000.29019919999700505] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 166 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1164 | PS: 0b0
+[0000.29033809999964433] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 166 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1167 | PS: 0b0
+[0000.29047759999957634] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 167 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1169 | PS: 0b0
+[00000.2906954999998561] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 167 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1171 | PS: 0b0
+[0000.29089119999844115] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 167 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1174 | PS: 0b0
+[0000.29110729999956675] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 168 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1176 | PS: 0b0
+[00000.2912659999965399] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 168 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1178 | PS: 0b0
+[0000.29139909999867086] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 168 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1181 | PS: 0b0
+[0000.29153519999817945] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 169 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1183 | PS: 0b0
+[00000.2916702999973495] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 169 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1185 | PS: 0b0
+[00000.2917983999977878] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 169 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1188 | PS: 0b0
+[000000.291918999999325] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 170 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1190 | PS: 0b0
+[0000.29207019999739714] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 170 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1192 | PS: 0b0
+[0000.29219369999918854] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 170 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1195 | PS: 0b0
+[00000.2923112999997102] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 171 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1197 | PS: 0b0
+[0000.29244069999913336] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 171 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1199 | PS: 0b0
+[0000.29254869999931543] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 171 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1202 | PS: 0b0
+[00000.2926726999976381] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 172 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1204 | PS: 0b0
+[00000.2927748999973119] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 172 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1206 | PS: 0b0
+[00000.2928690999979153] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 172 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1209 | PS: 0b0
+[0000.29298449999987497] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 173 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1211 | PS: 0b0
+[0000.29313009999896167] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 173 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1213 | PS: 0b0
+[0000.29325709999829996] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 173 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1216 | PS: 0b0
+[00000.2933876999995846] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 174 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1218 | PS: 0b0
+[00000.2934998999990057] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 174 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1220 | PS: 0b0
+[000000.293608599997242] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 174 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1223 | PS: 0b0
+[00000.2937060999975074] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 175 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1225 | PS: 0b0
+[0000.29379839999819524] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 175 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1227 | PS: 0b0
+[0000.29388709999693674] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 175 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1230 | PS: 0b0
+[0000.29399740000008023] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 176 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1232 | PS: 0b0
+[00000.2941520999993372] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 176 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1234 | PS: 0b0
+[0000.29426629999943543] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 176 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1237 | PS: 0b0
+[00000.2943753999970795] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 177 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1239 | PS: 0b0
+[00000.2944915999978548] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 177 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1241 | PS: 0b0
+[00000.2945912999966822] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 177 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1244 | PS: 0b0
+[0000.29472189999796683] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 178 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1246 | PS: 0b0
+[0000000.29485349999959] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 178 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1248 | PS: 0b0
+[00000.2949762999996892] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 178 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1251 | PS: 0b0
+[00000.2950846999992791] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 179 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1253 | PS: 0b0
+[00000.2952075999965018] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 179 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1255 | PS: 0b0
+[00000.2953092999996443] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 179 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1258 | PS: 0b0
+[0000.29540389999965555] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 180 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1260 | PS: 0b0
+[0000.29551489999721525] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 180 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1262 | PS: 0b0
+[00000.2956129999984114] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 180 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1265 | PS: 0b0
+[00000.2957031999976607] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 181 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1267 | PS: 0b0
+[00000.2958812999968359] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 181 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1269 | PS: 0b0
+[0000.29602849999719183] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 181 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1272 | PS: 0b0
+[0000.29701919999934034] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 182 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1274 | PS: 0b0
+[00000.2971819999984291] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 182 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1276 | PS: 0b0
+[00000.2973699999965902] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 182 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1279 | PS: 0b0
+[00000.2975553999967815] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 183 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1281 | PS: 0b0
+[000000.297703599997476] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 183 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1283 | PS: 0b0
+[0000.29783580000002985] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 183 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1286 | PS: 0b0
+[00000.2979699999996228] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 184 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1288 | PS: 0b0
+[00000.2981255999984569] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 184 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1290 | PS: 0b0
+[000000.298265999997966] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 184 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1293 | PS: 0b0
+[00000.2984084999989136] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 185 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1295 | PS: 0b0
+[00000.2985943999992742] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 185 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1297 | PS: 0b0
+[0000.30475599999772385] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 185 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1300 | PS: 0b0
+[00000.3049280999985058] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 186 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1302 | PS: 0b0
+[00000.3050759999969159] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 186 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1304 | PS: 0b0
+[0000.30526519999693846] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 186 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1307 | PS: 0b0
+[00000.3054071999977168] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 187 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1309 | PS: 0b0
+[00000.3055272999990848] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 187 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1311 | PS: 0b0
+[00000.3056561999983387] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 187 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1314 | PS: 0b0
+[000000.305791799997678] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 188 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1316 | PS: 0b0
+[0000.30592699999760953] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 188 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1318 | PS: 0b0
+[0000.30606559999796445] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 188 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1321 | PS: 0b0
+[0000.30619579999984126] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 189 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1323 | PS: 0b0
+[0000.30630859999655513] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 189 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1325 | PS: 0b0
+[0000.30641799999648356] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 189 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1328 | PS: 0b0
+[0000.30653389999861247] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 190 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1330 | PS: 0b0
+[00000.3066618999982893] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 190 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1332 | PS: 0b0
+[0000.30683159999898635] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 190 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1335 | PS: 0b0
+[000000.306949199999508] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 191 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1337 | PS: 0b0
+[0000.30705609999859007] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 191 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1339 | PS: 0b0
+[0000.30717659999936586] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 191 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1342 | PS: 0b0
+[000000.307289899999887] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 192 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1344 | PS: 0b0
+[00000.3073968999997305] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 192 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1346 | PS: 0b0
+[00000.3075046999983897] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 192 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1349 | PS: 0b0
+[00000.3076006999981473] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 193 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1351 | PS: 0b0
+[00000.3076919999984966] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 193 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1353 | PS: 0b0
+[0000.30778109999664593] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 193 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1356 | PS: 0b0
+[0000.30791409999801544] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 194 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1358 | PS: 0b0
+[00000.3080255999993824] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 194 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1360 | PS: 0b0
+[00000.3081706999982998] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 194 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1363 | PS: 0b0
+[00000.3083210999975563] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 195 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1365 | PS: 0b0
+[000000.308466699996643] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 195 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1367 | PS: 0b0
+[00000.3085869999995339] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 195 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1370 | PS: 0b0
+[0000.30874539999786066] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 196 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1372 | PS: 0b0
+[0000.30887539999821456] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 196 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1374 | PS: 0b0
+[00000.3089914999982284] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 196 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1377 | PS: 0b0
+[00000.3091179999973974] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 197 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1379 | PS: 0b0
+[0000.30927519999750075] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 197 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1381 | PS: 0b0
+[0000.30941079999684007] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 197 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1384 | PS: 0b0
+[00000.3095398999976169] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 198 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1386 | PS: 0b0
+[0000.30966609999813954] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 198 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1388 | PS: 0b0
+[00000.3098541999970621] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 198 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1391 | PS: 0b0
+[0000.30999789999987115] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 199 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1393 | PS: 0b0
+[00000.3101673999990453] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 199 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1395 | PS: 0b0
+[00000.3103282999982184] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 199 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1398 | PS: 0b0
+[00000.3104392999994161] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 200 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1400 | PS: 0b0
+[00000.3105576999987534] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 200 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1402 | PS: 0b0
+[0000.31068969999978435] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 200 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1405 | PS: 0b0
+[000000.310798699996667] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 201 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1407 | PS: 0b0
+[00000.3108983999991324] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 201 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1409 | PS: 0b0
+[0000.31102199999804725] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 201 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1412 | PS: 0b0
+[0000.31113129999721423] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 202 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1414 | PS: 0b0
+[0000.31126429999858374] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 202 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1416 | PS: 0b0
+[00000.3113895999995293] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 202 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1419 | PS: 0b0
+[0000.31149309999818797] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 203 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1421 | PS: 0b0
+[0000.31160839999938617] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 203 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1423 | PS: 0b0
+[00000.3117095999987214] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 203 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1426 | PS: 0b0
+[00000.3118015000000014] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 204 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1428 | PS: 0b0
+[00000.3118916999992507] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 204 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1430 | PS: 0b0
+[00000.3119909999986703] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 204 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1433 | PS: 0b0
+[0000.31208909999986645] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 205 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1435 | PS: 0b0
+[00000.3222016999970947] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 205 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1437 | PS: 0b0
+[0000.32238589999906253] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 205 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1440 | PS: 0b0
+[0000.32252279999738676] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 206 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1442 | PS: 0b0
+[0000.32263289999900735] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 206 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1444 | PS: 0b0
+[0000.32272659999944153] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 206 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1447 | PS: 0b0
+[00000.3228172999988601] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 207 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1449 | PS: 0b0
+[0000.32290699999794015] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 207 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1451 | PS: 0b0
+[0000.32302290000006906] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 207 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1454 | PS: 0b0
+[00000.3231328999972902] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 208 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1456 | PS: 0b0
+[00000.3232362999988254] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 208 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1458 | PS: 0b0
+[00000.3233325999972294] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 208 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1461 | PS: 0b0
+[0000.32342439999774797] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 209 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1463 | PS: 0b0
+[00000.3235157999988587] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 209 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1465 | PS: 0b0
+[0000.32360509999853093] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 209 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1468 | PS: 0b0
+[00000.3236933999978646] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 210 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1470 | PS: 0b0
+[0000.32378289999905974] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 210 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1472 | PS: 0b0
+[00000.3238713999999163] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 210 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1475 | PS: 0b0
+[0000.32397579999815207] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 211 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1477 | PS: 0b0
+[0000.32409219999681227] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 211 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1479 | PS: 0b0
+[00000.3241996999968251] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 211 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1482 | PS: 0b0
+[00000.3243418999991263] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 212 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1484 | PS: 0b0
+[0000.32443879999846104] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 212 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1486 | PS: 0b0
+[00000.3245292999999947] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 212 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1489 | PS: 0b0
+[0000.32461809999949764] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 213 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1491 | PS: 0b0
+[0000.32471409999925527] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 213 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1493 | PS: 0b0
+[00000.3248022999978275] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 213 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1496 | PS: 0b0
+[0000.32491339999978663] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 214 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1498 | PS: 0b0
+[00000.3250380999998015] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 214 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1500 | PS: 0b0
+[0000.32514959999753046] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 214 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1503 | PS: 0b0
+[0000.32525649999661255] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 215 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1505 | PS: 0b0
+[00000.3253609999992477] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 215 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1507 | PS: 0b0
+[0000.32545459999892046] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 215 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1510 | PS: 0b0
+[0000.32555299999876297] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 216 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1512 | PS: 0b0
+[000000.325643799998943] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 216 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1514 | PS: 0b0
+[00000.3257322999997996] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 216 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1517 | PS: 0b0
+[0000.32582039999761037] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 217 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1519 | PS: 0b0
+[0000.32590889999846695] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 217 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1521 | PS: 0b0
+[0000.32602789999873494] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 217 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1524 | PS: 0b0
+[00000.3262035999978252] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 218 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1526 | PS: 0b0
+[00000.3263446999990265] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 218 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1528 | PS: 0b0
+[00000.3265192999970168] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 218 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1531 | PS: 0b0
+[00000.3267100999983086] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 219 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1533 | PS: 0b0
+[000000.326833599996462] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 219 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1535 | PS: 0b0
+[00000.3269683999969857] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 219 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1538 | PS: 0b0
+[0000.32708479999928386] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 220 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1540 | PS: 0b0
+[00000.3272186999965925] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 220 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1542 | PS: 0b0
+[0000.32734179999897606] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 220 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1545 | PS: 0b0
+[00000.3274822999992466] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 221 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1547 | PS: 0b0
+[00000.3276071000000229] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 221 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1549 | PS: 0b0
+[0000.32772859999749926] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 221 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1552 | PS: 0b0
+[00000.3278532999975141] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 222 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1554 | PS: 0b0
+[0000.32809119999728864] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 222 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1556 | PS: 0b0
+[0000.32821819999662694] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 222 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1559 | PS: 0b0
+[0000.32835359999808134] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 223 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1561 | PS: 0b0
+[0000.32847639999818057] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 223 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1563 | PS: 0b0
+[00000.3285883999997168] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 223 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1566 | PS: 0b0
+[00000.3286889999981213] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 224 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1568 | PS: 0b0
+[00000.3288079999983893] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 224 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1570 | PS: 0b0
+[0000.32891019999806304] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 224 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1573 | PS: 0b0
+[0000.32902219999959925] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 225 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1575 | PS: 0b0
+[0000.32914159999927506] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 225 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1577 | PS: 0b0
+[0000.32926259999658214] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 225 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1580 | PS: 0b0
+[00000.3293703999988793] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 226 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1582 | PS: 0b0
+[0000.33874029999788036] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 226 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1584 | PS: 0b0
+[0000.33903859999918495] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 226 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1587 | PS: 0b0
+[00000.3392463999989559] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 227 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1589 | PS: 0b0
+[00000.3394988000000012] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 227 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1591 | PS: 0b0
+[00000.3396428999985801] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 227 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1594 | PS: 0b0
+[0000000.33979559999716] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 228 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1596 | PS: 0b0
+[00000.3399320999997144] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 228 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1598 | PS: 0b0
+[0000.34007089999795426] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 228 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1601 | PS: 0b0
+[0000.34021649999704096] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 229 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1603 | PS: 0b0
+[0000.34035369999764953] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 229 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1605 | PS: 0b0
+[0000.34047369999825605] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 229 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1608 | PS: 0b0
+[0000.34058569999979227] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 230 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1610 | PS: 0b0
+[00000.3406905999981973] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 230 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1612 | PS: 0b0
+[0000.34081589999914286] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 230 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1615 | PS: 0b0
+[00000.3409373999966192] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 231 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1617 | PS: 0b0
+[0000.34104459999798564] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 231 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1619 | PS: 0b0
+[00000.3411710000000312] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 231 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1622 | PS: 0b0
+[000000.341277399998944] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 232 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1624 | PS: 0b0
+[0000.34142339999743854] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 232 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1626 | PS: 0b0
+[00000.3415382999992289] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 232 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1629 | PS: 0b0
+[0000.34168709999721614] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 233 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1631 | PS: 0b0
+[0000.34181079999689246] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 233 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1633 | PS: 0b0
+[00000.3419257999994443] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 233 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1636 | PS: 0b0
+[00000.3420355999987805] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 234 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1638 | PS: 0b0
+[00000.3421377999984543] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 234 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1640 | PS: 0b0
+[0000.34226269999999204] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 234 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1643 | PS: 0b0
+[0000.34236999999848194] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 235 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1645 | PS: 0b0
+[00000.3424879999984114] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 235 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1647 | PS: 0b0
+[0000.34260079999876325] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 235 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1650 | PS: 0b0
+[00000.3427237999967474] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 236 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1652 | PS: 0b0
+[00000.3428518999971857] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 236 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1654 | PS: 0b0
+[00000.3429902999996557] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 236 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1657 | PS: 0b0
+[0000.34311519999755546] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 237 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1659 | PS: 0b0
+[0000.34324419999757083] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 237 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1661 | PS: 0b0
+[0000.34336119999716175] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 237 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1664 | PS: 0b0
+[00000.3434862999965844] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 238 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1666 | PS: 0b0
+[0000.34359279999989667] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 238 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1668 | PS: 0b0
+[00000.3437132999970345] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 238 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1671 | PS: 0b0
+[00000.3438170999979775] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 239 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1673 | PS: 0b0
+[0000.34391409999807365] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 239 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1675 | PS: 0b0
+[00000.3440138999976625] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 239 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1678 | PS: 0b0
+[0000.34412109999902896] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 240 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1680 | PS: 0b0
+[0000.34438119999686023] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 240 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1682 | PS: 0b0
+[000000.344512499999837] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 240 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1685 | PS: 0b0
+[0000.34465369999816176] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 241 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1687 | PS: 0b0
+[00000.3447920999969938] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 241 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1689 | PS: 0b0
+[00000.3449244999974326] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 241 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1692 | PS: 0b0
+[00000.3450942999988911] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 242 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1694 | PS: 0b0
+[0000.34521609999865177] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 242 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1696 | PS: 0b0
+[00000.3453397999983281] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 242 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1699 | PS: 0b0
+[0000.34546749999935855] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 243 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1701 | PS: 0b0
+[00000.3456555999982811] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 243 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1703 | PS: 0b0
+[00000.3457834999971965] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 243 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1706 | PS: 0b0
+[00000.3458973999986483] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 244 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1708 | PS: 0b0
+[0000.34602849999646423] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 244 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1710 | PS: 0b0
+[0000.34616409999944153] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 244 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1713 | PS: 0b0
+[00000.3462859999999637] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 245 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1715 | PS: 0b0
+[0000.34641439999904833] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 245 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1717 | PS: 0b0
+[00000.3465472999996564] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 245 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1720 | PS: 0b0
+[000000.346714699997392] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 246 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1722 | PS: 0b0
+[0000.34689289999732864] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 246 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1724 | PS: 0b0
+[00000.3470261999973445] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 246 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1727 | PS: 0b0
+[000000.347156099996937] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 247 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1729 | PS: 0b0
+[0000.35501599999770406] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 247 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1731 | PS: 0b0
+[00000.3551978999967105] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 247 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1734 | PS: 0b0
+[0000.35533489999943413] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 248 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1736 | PS: 0b0
+[0000.35546439999961876] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 248 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1738 | PS: 0b0
+[0000.35557519999929355] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 248 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1741 | PS: 0b0
+[00000.3556814999974449] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 249 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1743 | PS: 0b0
+[00000.3557792999999947] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 249 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1745 | PS: 0b0
+[0000.35587329999907524] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 249 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1748 | PS: 0b0
+[00000.3560038999967219] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 250 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1750 | PS: 0b0
+[0000.35612009999749716] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 250 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1752 | PS: 0b0
+[0000.35623839999971096] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 250 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1755 | PS: 0b0
+[00000.3563858999987133] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 251 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1757 | PS: 0b0
+[0000.35651799999686773] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 251 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1759 | PS: 0b0
+[00000.3568061999976635] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 251 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1762 | PS: 0b0
+[0000000.35726159999831] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 252 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1764 | PS: 0b0
+[0000000.35739669999748] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 252 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1766 | PS: 0b0
+[00000.3575295999980881] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 252 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1769 | PS: 0b0
+[0000.35774709999896004] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 253 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1771 | PS: 0b0
+[0000.35789549999753945] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 253 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1773 | PS: 0b0
+[0000.35806529999899794] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 253 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1776 | PS: 0b0
+[0000.35824159999901894] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 254 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1778 | PS: 0b0
+[00000.3583772999991197] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 254 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1780 | PS: 0b0
+[00000.3585103999976127] [       (MainLoop)@__main__         ] debug     PC: 32779 | A: 0   | X: 0   | Y: 254 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: INY         | C: 1783 | PS: 0b0
+[00000.3586263999968651] [       (MainLoop)@__main__         ] debug     PC: 32780 | A: 0   | X: 0   | Y: 255 | P: 176      | SP: 255 | P1: 0        | P2: 0        | I: CPY #$ff    | C: 1785 | PS: 0b0
+[00000.3587274999990768] [       (MainLoop)@__main__         ] debug     PC: 32782 | A: 0   | X: 0   | Y: 255 | P: 51       | SP: 255 | P1: 0        | P2: 0        | I: BNE $800b   | C: 1787 | PS: 0b0
+[0000.35884989999976824] [       (MainLoop)@__main__         ] debug     PC: 32784 | A: 0   | X: 0   | Y: 255 | P: 51       | SP: 255 | P1: 0        | P2: 0        | I: STA $1000,Y | C: 1789 | PS: 0b0
+[000000.358985599999869] [       (MainLoop)@__main__         ] debug     PC: 32787 | A: 0   | X: 0   | Y: 255 | P: 51       | SP: 255 | P1: 0        | P2: 0        | I: JMP $8000   | C: 1794 | PS: 0b0
+[00000.3590900999988662] [       (MainLoop)@__main__         ] debug     PC: 32768 | A: 0   | X: 0   | Y: 255 | P: 51       | SP: 255 | P1: 0        | P2: 0        | I: LDA #$01    | C: 1797 | PS: 0b0
+[00000.3592120999965118] [       (MainLoop)@__main__         ] debug     PC: 32770 | A: 1   | X: 0   | Y: 255 | P: 49       | SP: 255 | P1: 0        | P2: 0        | I: STA $3024   | C: 1799 | PS: 0b0
+[00000.4584791999986919] [       (MainLoop)@__main__         ] debug     PC: 32773 | A: 1   | X: 0   | Y: 255 | P: 49       | SP: 255 | P1: 0        | P2: 0        | I: RTS         | C: 1803 | PS: 0b1
+[00000.4587455000000773] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00000.5612124999970547] [       (MainLoop)@__main__         ] debug     PC: 1     | A: 1   | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1809 | PS: 0b1
+[00000.6601630999975896] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 1   | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1816 | PS: 0b1
+[00000.7621831999967981] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1818 | PS: 0b1
+[00000.7623467999983404] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00000.8623615999968024] [       (MainLoop)@__main__         ] debug     PC: 3     | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1824 | PS: 0b1
+[000000.960762299997441] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1831 | PS: 0b1
+[00001.0620226999999431] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1833 | PS: 0b1
+[000001.062244999997347] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00001.1570548999989114] [       (MainLoop)@__main__         ] debug     PC: 5     | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1839 | PS: 0b1
+[00001.2534469999991416] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1846 | PS: 0b1
+[00001.3465617999972892] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1848 | PS: 0b1
+[000001.346714899998915] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00001.4388992999993206] [       (MainLoop)@__main__         ] debug     PC: 7     | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1854 | PS: 0b1
+[000001.535631499998999] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1861 | PS: 0b1
+[00001.6264205999978003] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1863 | PS: 0b1
+[00001.6265819999971427] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00001.7192470999980287] [       (MainLoop)@__main__         ] debug     PC: 9     | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1869 | PS: 0b1
+[00001.8146127999971213] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1876 | PS: 0b1
+[000001.907601099999738] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1878 | PS: 0b1
+[00001.9078019999979006] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00001.9989574999999604] [       (MainLoop)@__main__         ] debug     PC: 11    | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1884 | PS: 0b1
+[00002.0889340999965498] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1891 | PS: 0b1
+[0000002.17980499999976] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1893 | PS: 0b1
+[00002.1800298999987717] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[00002.2724516999987827] [       (MainLoop)@__main__         ] debug     PC: 13    | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1899 | PS: 0b1
+[000002.364654299999529] [       (MainLoop)@__main__         ] debug     PC: 32796 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: LDA #$10    | C: 1906 | PS: 0b1
+[00002.4563136999968265] [       (MainLoop)@__main__         ] debug     PC: 32798 | A: 16  | X: 0   | Y: 255 | P: 53       | SP: 254 | P1: 0        | P2: 0        | I: RTI         | C: 1908 | PS: 0b1
+[00002.4564725999989605] [         tick_cpu@cpu.cpu_emu      ] debug     Encountered BRK instruction.
+[000002.549392799999623] [       (MainLoop)@__main__         ] debug     PC: 15    | A: 16  | X: 0   | Y: 255 | P: 49       | SP: 1   | P1: 0        | P2: 0        | I: BRK         | C: 1914 | PS: 0b1

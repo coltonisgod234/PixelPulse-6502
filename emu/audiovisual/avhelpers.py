@@ -1,5 +1,5 @@
 import numpy as np
-from constants import APU_SAMPLERATE
+from cpu.constants import APU_SAMPLERATE
 import pygame
 
 def generate_triangle_wave(length: int, frequency: int, volume=1.0) -> np.ndarray:

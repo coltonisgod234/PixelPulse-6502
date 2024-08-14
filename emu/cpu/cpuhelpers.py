@@ -1,47 +1,77 @@
-from time import perf_counter
-from typing import SupportsIndex
-
-from helpers import pixel_print
+"""
+Balls
+"""
 
 import py65
 import py65.devices
-import py65.devices.mpu65c02
+import py65.devices.mpu65c02 as w65c02s
 import py65.disassembler
 import py65.monitor
+
+from utils.helpers import pixel_print
 
 # CPU helpers
 
 cpu = py65.devices.mpu65c02.MPU()
-def config_cpu(args) -> py65.devices.mpu65c02.MPU:
-    try: 
+def config_cpu(args) -> w65c02s.MPU:
+    """
+    Configure the systems CPU and load the program
+
+    ...
+
+    Arguments
+    ---------
+    args
+        An object containing the arguments
+
+    Returns
+    -------
+    py65.devices.mpu65c02.MPU
+        The CPU with all attributes loaded in
+    """
+    try:
         f = open(args.cart, "rb")
-    except FileNotFoundError: 
+    except FileNotFoundError:
         print(f"Cart File \"{args.cart}\" Not Found")
         quit(1)
 
     # After reading the file
     program_bytes = f.read()
 
-    # We Reconstruct Our Program
-    program = []
+    #for byte in enumerate(program_bytes):
+    #    #print(f"{program_bytes[byte]:02X}", end=" ")
+    #    program.append(int(program_bytes[byte]))
+    pixel_print(f"Cart is {hex(len(program_bytes))} bytes.",  __name__, "config_cpu")
 
-    for byte in range(len(program_bytes)):
-        #print(f"{program_bytes[byte]:02X}", end=" ")
-        program.append(int(program_bytes[byte]))
-        
-    pixel_print(f"Cart is {hex(len(program))} bytes.")
+    # Don't ask... I don't even know...
+    cpu.memory[0x0000:0xFFFF] = program_bytes
+    cpu.pc = (program_bytes[0xfffd] << 8) | program_bytes[0xfffc]
 
-    cpu.memory[0x0000:0xFFFF] = program
-    cpu.pc = (program[0xfffd] << 8) | program[0xfffc]  # Don't ask... I don't even know...
-
-    pixel_print(f"Loaded to {cpu.pc}")
+    pixel_print(f"Loaded to {cpu.pc}", __name__, "config_cpu")
 
     return cpu
 
+def get_instruction_from_memory(addr: int, cpu_instance: py65.devices.mpu65c02.MPU) -> str:
+    """
+    Load an instruction from memory and disasemble it
 
-def get_instruction_from_memory(addr: int) -> str:
+    ...
+
+    Arguments
+    ---------
+    addr : int
+        An integer representing the index into the CPU's memory
+
+    cpu_instance : py65.devices.mpu65c02.MPU
+        The CPU to dissaseble from
+
+    Returns
+    -------
+    str
+        A string representing the disassembled instruction
+    """
     addr_parser = py65.disassembler.AddressParser()
-    dasm = py65.disassembler.Disassembler(cpu, addr_parser)
+    dasm = py65.disassembler.Disassembler(cpu_instance, addr_parser)
 
     i = dasm.instruction_at(addr)
 
