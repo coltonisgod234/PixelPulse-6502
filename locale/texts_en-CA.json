@@ -1,0 +1,20 @@
+{
+    "version": 0.4,
+    "constants.py": {
+        "VERSION_INFO": "PixelPulse-6502 v0.4 prealpha",
+        "LOG_FILENAME": "pixelpulse.log"
+    },
+    "cpu": {
+        "cpuhelpers": {
+            "cart_file_not_found_err": "Cart File \"%s\" Not Found",
+            "cart_size_display_msg": "Cart is %s bytes.",
+            "loaded_to_msg": "Loaded to %s"
+        },
+        "cpu_emu": {
+            "got_brk_instruction_msg": "Encountered BRK instruction."
+        }
+    },
+    "main": {
+        "cpu_debug_registers_msg": "PC: %-5s | A: %-3s | X: %-3s | Y: %-3s | P: %-8s | SP: %-3s | P1: %-8s | P2: %-8s | I: %-11s | C: %-3s | PS: %-3s"
+    }
+}

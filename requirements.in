@@ -3,3 +3,4 @@ py65
 pygame
 numpy
 pytest
+cachetools
