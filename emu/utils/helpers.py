@@ -199,7 +199,7 @@ def print_locale(msg: str, mod: str, func: str, replacements: list,
     Wrapper over pixel_print() that prints a message from the locale
     """
     msg = LocaleManager.get_message(LocaleManager, msg, replacements)
-    pixel_print(f"{" "*identation_level}{msg}", mod, func, errorlevel)
+    pixel_print(f"{''.join([' ' for _ in range(identation_level)])}{msg}", mod, func, errorlevel)
 
 def get_execution_time() -> float:
     """

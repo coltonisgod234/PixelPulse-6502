@@ -59,6 +59,62 @@ In the root directory of the project run `pip install -r requirements.txt` somet
 
 The SDK is now installed
 
+
+## Creating a Virtual Environment
+
+It's recommended to create a virtual environment to manage the project's dependencies separately. Run the following command to create a virtual environment named `venv`.
+
+```
+   cd emu
+   python3 -m venv .venv
+```
+
+This command will start the Streamlit server, and you should see a URL in the terminal that you can visit in your web browser to view the emu.
+
+Activate the virtual environment:
+
+- On Windows:
+```
+.venv/Scripts/activate
+```
+
+- On macOS or Linux:
+```
+source .venv/bin/activate
+```
+
+## Installing Dependencies (while in emu directory)
+
+Install pip-tools
+
+```
+pip install pip-tools
+```
+   
+If the `requirements.txt` file is not present, you may need to generate it from `requirements.in` using `pip-compile`:
+
+```
+   pip-compile ../requirements.in
+```
+
+With the virtual environment activated and the `requirements.txt` file generated, install the project dependencies using the `requirements.txt` file.
+   - On Windows:
+   ```
+   ./.venv/Scripts/python.exe -m pip install -r ../requirements.txt
+   ```
+
+- On Linux:
+   ```
+   ./.venv/bin/python -m pip install -r ../requirements.txt
+   ```
+
+   - On macOS:
+   ```
+   ./.venv/bin/python -m pip install -r ../requirements.txt
+   
+   ```
+
+
 ## MacOS
 Sorry, MacOS isn't supported (offically) and probably won't ever as I don't own a Mac, please use a Linux or Windows system.
 

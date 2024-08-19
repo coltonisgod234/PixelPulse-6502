@@ -17,3 +17,5 @@ pixelpulse/
 # Python testing frameworks
 .pytest_cache/
 coverage/
+
+.venv/
