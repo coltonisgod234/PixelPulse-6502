@@ -69,8 +69,6 @@ It's recommended to create a virtual environment to manage the project's depende
    python3 -m venv .venv
 ```
 
-This command will start the Streamlit server, and you should see a URL in the terminal that you can visit in your web browser to view the emu.
-
 Activate the virtual environment:
 
 - On Windows:
@@ -113,6 +111,13 @@ With the virtual environment activated and the `requirements.txt` file generated
    ./.venv/bin/python -m pip install -r ../requirements.txt
    
    ```
+
+
+# Running The Emulator
+
+```
+python main.py ../asm/out.bin
+```
 
 
 ## MacOS
