@@ -1,1 +1,19 @@
-**/__pycache__/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Caches and logs
+*/**/*.log
+*/**/*.cache
+
+# Virtual environment
+venv/
+pixelpulse/
+
+# IDE files
+.vscode/
+.idea/
+
+# Python testing frameworks
+.pytest_cache/
+coverage/

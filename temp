@@ -1,0 +1,34 @@
+\;; use "\;;" for comments, comments ignore all escapes or commands.
+\$local\= greeting \ "Hello" \;; Use "\ " to seperate, not commas.
+\$local\= name \ "World"
+\#echo "\$greeting, \$name\\e\!" \;; you have to escape the ! with this syntax because \ isn't an escape, to escape you need a backslash, "e", a backslash and then your character like "\\e\!"
+
+\@\= [
+    \$local\= result \ (\*+\= a \ b)
+    \ret \$result
+] \ "addNumbers" \ ([a \ b ]) \;; The () are optional, I just use them for clarity
+
+\^global\= Person \ [
+    \$local\= name \ \%
+    \$local\= age \ \%
+]
+
+person\.name= "Alice"
+\#echo "Name: \$person\.name"
+\$local\= name \#echoin "What's your name?"
+\if (\$name) \= ("Alice") \ [
+    \#echo "Oh, I know you!"
+] \else [
+    \#echo "Who are you?"
+]
+
+\;; Scripting stuff:
+\;; \${S}\= <GenericInput>, <Var>
+\;; \$ <Var>
+\;; \@\= \[<CommandArray>\] <FunctionName> <ArgumentList>
+\;; \@<FunctionName>(<ArgumentList>)
+\;; \#<Command>
+\;; \*{MathOperation}\= <GenericInput> <GenericInput>
+\;; \^\= <ClassName> \[<Members>\]
+\;; {Value}\.{attrib}
+\;; \ret <Value>
