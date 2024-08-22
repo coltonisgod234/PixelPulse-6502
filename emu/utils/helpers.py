@@ -1,15 +1,14 @@
 """
 Helpers
 """
-from time import perf_counter
 import json
-
 from pathlib import Path
-
-from cpu.constants import (ERRRORLEVEL_TABLE, LOGFILE,
-                       PROGRAM_EXECUTIONTIME_START, MAX_DIR_SEARCH_DEPTH)
+from time import perf_counter
 
 from cachetools import TTLCache
+
+from cpu.constants import (ERRRORLEVEL_TABLE, LOGFILE, MAX_DIR_SEARCH_DEPTH,
+                             PROGRAM_EXECUTIONTIME_START)
 
 JSONcache = TTLCache(maxsize=100, ttl=300.0)
 localeCache = TTLCache(maxsize=100, ttl=300.0)
@@ -119,7 +118,7 @@ class LocaleManager:
             The ISO 639-1 code of the language, like \"en\" or \"jp\"
         
         reigon : str
-            The reigon or subclass of the language, like \"ca\" or \"KANJI\"
+            The reigon or subclass of the language, like \"CA\" or \"KANJI\"
         """
         # Find the locale directory
         locale_directory = find_directory(__file__, "locale")

@@ -9,7 +9,6 @@ import pygame
 from audiovisual.audio import tick_audio
 from audiovisual.video import (after_instruction, config_video, tick_display,
                                tick_events)
-
 from controller.keyboard import tick_keyboard
 from cpu.constants import (TARGET_CLOCK_RATE, TARGET_FPS, VRAM_END_LOCATION,
                            VRAM_LOCATION)
@@ -17,7 +16,6 @@ from cpu.cpu_emu import tick_cpu
 from cpu.cpuhelpers import config_cpu, get_instruction_from_memory
 from cpu.states import (PixelStatusRegister, SystemControllerState,
                         tick_pixel_status_register)
-
 from utils.helpers import LocaleManager, pixel_print, print_locale
 
 LocaleManager.load_locale(LocaleManager, "en", "CA")
@@ -78,7 +76,7 @@ if __name__ == "__main__":
                             cpu.a,
                             cpu.x,
                             cpu.y,
-                            cpu.p,
+                            bin(cpu.p),
                             cpu.sp,
                             controller1.convert_buttons_to_int(),
                             controller2.convert_buttons_to_int(),

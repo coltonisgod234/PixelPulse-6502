@@ -1,3 +1,5 @@
+"spheres"
+
 import numpy as np
 from cpu.constants import APU_SAMPLERATE
 import pygame
@@ -26,5 +28,5 @@ def draw_pixel(x: int, y: int, col: int) -> None:
     display = pygame.display.get_surface()
     colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
 
-    rect = pygame.rect.Rect(x, y, 8, 8)
+    rect = pygame.rect.Rect(x, y, 1, 1)
     pygame.draw.rect(display, colors[col], rect)

@@ -1,5 +1,6 @@
 {
     "version": 0.4,
+    "test": ["Hello, World!", "Goodbye, World!"],
     "constants.py": {
         "VERSION_INFO": "PixelPulse-6502 v0.4 prealpha",
         "LOG_FILENAME": "pixelpulse.log"
