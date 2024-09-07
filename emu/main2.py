@@ -48,9 +48,11 @@ args = parser.parse_args()
 
 DEBUG_MODE_MASK = args.debug
 
-colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),(192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),(255,0,255),(0,255,255),(255,255,255)]
+colors = [(0,0,0),(128,0,0),(0,128,0),(128,128,0),(0,0,128),(128,0,128),(0,128,128),
+          (192,192,192),(128,128,128),(255,0,0),(0,255,0),(255,255,0),(0,0,255),
+          (255,0,255),(0,255,255),(255,255,255)]
 
-try: 
+try:
     f = open(args.cart, "rb")
 except FileNotFoundError: 
     print(f"Cart File \"{args.cart}\" Not Found")
@@ -65,7 +67,7 @@ program = []
 for byte in range(len(program_bytes)):
     #print(f"{program_bytes[byte]:02X}", end=" ")
     program.append(int(program_bytes[byte]))
-    
+
 print(f"Cart is {len(program)} bytes.")
 
 # Define classes
@@ -163,7 +165,7 @@ def update_io() -> None:
                 buffer = generate_square_wave(APU_LENGTH, freq, vol)  # Buffer all that audio
                 sound = pygame.mixer.Sound(buffer)  # Play it
 
-                #sound.play(0)
+                sound.play(0)
             
             if voice == 1: # It's A Triangle Wave
                 # Calculate freqencies and audios and stuff (I have no idea what this means, it's honestly just a mix of constants)
@@ -194,7 +196,7 @@ def update_io() -> None:
 
     # Update The Palette
     palette_ram = cpu.memory[0x3013:0x3023]  # Fill up the palette memory so it's accessable
-    colors = palette_ram  # Set the colors to this
+    cols = palette_ram  # Set the colors to this
 
     # Draw The Display
     vram = cpu.memory[VRAM_LOCATION:VRAM_END_LOCATION]
@@ -202,7 +204,10 @@ def update_io() -> None:
         for y in range(DISPLAY_Y_SIZE):  # Loop through all the pixels
             try:
                 col = vram[y * 64 + x]  # Locate them
-                draw_pixel(x, y, col)  # Make 'em pulse (as in draw them)
+                # A small optimization here, we only draw the pixel
+                # if it's not black, as we start on a black screen every frame
+                if cols[col] == (0, 0, 0): # Black
+                    draw_pixel(x, y, col) # Make 'em pulse (as in draw them)
             except IndexError:
                 pixel_print("Bad pixel data.", 4)
 

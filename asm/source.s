@@ -1,6 +1,5 @@
 .segment "CODE"
-    font:
-        .db #%00110101, #%11111011
+    .include "font_data.asm"
     ; Subroutine to refresh display
     refresh_display:
         lda #%00000001    ; Load immediate value %00000001 into accumulator
@@ -12,16 +11,88 @@
 
     ; Reset subroutine
     rst:
-        ldx #$00          ; Initialize X register to 0
+        ;jsr test_display
+        jsr test_audio
+        ;jsr test_controller
+        ;jsr draw_text
+        jmp rst
 
-    loopy:
-        iny               ; Increment Y register
-        cpy #$FF          ; Compare Y to 255 (hexadecimal $FF)
-        bne loopy         ; Branch back to loopy if Y is not equal to 255
-        sta $1000, Y      ; Store accumulator value into memory address $1000 + Y
+    delay_loop_1:
+        ; Push stuff
+        php
+        pha
+        phx
+        phy
 
-        jsr refresh_display ; Use JSR to call subroutine
-        jmp rst           ; Infinite loop (jump to rst)
+        ldy #$00
+        @Loop:
+            iny
+
+            cpy #$15
+            bne @Loop
+
+            rts
+
+        plp
+        pla
+        plx
+        ply
+
+        rts
+
+
+    test_display:
+        inx               ; Increment X register
+
+        inc a
+        
+        ; Left side
+        sta $1000, X      ; Store accumulator value into memory address $1000 + X
+
+        cpx #$FF          ; Compare X to 255 (hexadecimal $FF)
+        bne test_display  ; Branch back to loopy if X is not equal to 255
+
+        jsr refresh_display
+        rts
+    
+    test_audio:
+        inc a
+        sta $3001
+
+        jsr refresh_display
+
+        rts
+
+    draw_text:
+        ; A = data, Y = bit index, X = data index
+        lda #0
+        ldx #0
+        ldy #0
+
+        @loop:
+            lda FONT_A, x       ; Load data
+            asl a               ; Shift left
+            and #1              ; Get the LSB
+            
+            
+        
+        rts
+
+
+    test_controller:
+        ;lda $3011               ; Get our controller #1 state
+        ;and #%00000001          ; And with #$01 to isolate the LSB
+        ;sta $1050, Y            ; Store that to the screen
+        ;asl a                   ; Shift all bits left (go to the next bit)
+        ;iny                     ; Increment Y to go to the next position
+        ;cpy #$08                ; Balls
+        ;bne test_controller     ; Repeat until all bits are done
+
+        lda $3011
+        sta $1050
+
+        jsr refresh_display
+        rts
 
     nmi:
         lda #$00          ; Debug statement
@@ -33,5 +104,5 @@
 
 .segment "VECTORS"
     .word nmi    ; Non-maskable interrupt vector (address $FFFA)
-    .word rst    ; Reset interrupt vector (address $FFFC)
-    .word irq    ; Interrupt request vector (address $FFFE)
+    .word irq    ; Reset interrupt vector (address $FFFC)
+    .word rst    ; Interrupt request vector (address $FFFE)

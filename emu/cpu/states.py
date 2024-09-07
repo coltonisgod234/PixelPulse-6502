@@ -93,11 +93,20 @@ class SystemControllerState:
             A bitmapped integer representing the states of the buttons.
         """
         pressed_int = 0b00000000
-        for button, bitmask in self.buttons_conversion_table.items():
-            # If the button is pressed, OR its bitmask into the result
-            if self.pressed.get(button, False):
-                result |= bitmask
+        if self.pressed["right"]:
+            pressed_int |= 0b00100000
+        if self.pressed["left"]:
+            pressed_int |= 0b00010000
+        if self.pressed["up"]:
+            pressed_int |= 0b00001000
+        if self.pressed["down"]:
+            pressed_int |= 0b00000100
+        if self.pressed["a"]:
+            pressed_int |= 0b00000010
+        if self.pressed["b"]:
+            pressed_int |= 0b00000001
 
+        self.pressed_as_int = pressed_int
         return pressed_int
 
 

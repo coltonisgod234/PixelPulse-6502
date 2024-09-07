@@ -2,8 +2,11 @@
 Manages video logic for the PixelPulse
 """
 
+# Pylint does not shut up about my imports, so I've forced it to
+# pylint: disable=import-error
+
 import pygame
-from cpu.constants import APU_SAMPLERATE, DISPLAY_X_SIZE, DISPLAY_Y_SIZE
+from cpu.constants import APU_SAMPLERATE, DISPLAY_X_SIZE, DISPLAY_Y_SIZE, BLACK_COLORS_LIST_INDEX
 
 from audiovisual.avhelpers import draw_pixel
 from utils.helpers import get_high_nibble, get_low_nibble, is_multiple_of_2
@@ -26,7 +29,7 @@ def config_video() -> tuple:
     pygame.display.init()
     pygame.display.set_caption("PixelPulse 6502")
     pygame.mixer.init(APU_SAMPLERATE)
-    display = pygame.display.set_mode((DISPLAY_X_SIZE*5, DISPLAY_Y_SIZE*5))
+    display = pygame.display.set_mode((DISPLAY_X_SIZE*8, DISPLAY_Y_SIZE*8))
     return (display,clock)
 
 def tick_events():
@@ -95,13 +98,20 @@ def tick_display(vram: list[int]):
     # Handle drawing the pixels
     for x in range(DISPLAY_X_SIZE):  # Loop through all the pixels
         for y in range(DISPLAY_Y_SIZE):  # Loop through all the pixels
-            if (get_low_nibble(vram[y * DISPLAY_Y_SIZE + x]) == 0
-                and get_high_nibble(vram[y * DISPLAY_Y_SIZE + x]) == 0):
-                continue
+            # The address will be the same, so compute it now, this will save a minuscule, 
+            # but still nice amount of time
+            addr = y * DISPLAY_Y_SIZE + x
 
-            col = get_low_nibble(vram[y * DISPLAY_Y_SIZE + x])
-            draw_pixel(x, y, col)
+            # Color 1
+            col = get_low_nibble(vram[addr])
 
-            col = get_high_nibble(vram[y * DISPLAY_Y_SIZE + x])
-            draw_pixel(x, y, col)
+            # Optimization: only draw pixels that change the starting colour (black) of our canvas
+            if col != BLACK_COLORS_LIST_INDEX:
+                draw_pixel(x, y, col)
+
+            # Color 2
+            col = get_high_nibble(vram[addr])
+
+            if col != BLACK_COLORS_LIST_INDEX: # Black
+                draw_pixel(x+4, y, col)
             #pixel_print(f"Bad pixel data. {e}", 2)

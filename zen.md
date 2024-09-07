@@ -4,7 +4,9 @@
 - Code should be clear and easy to understand.
 - Follow consistent naming conventions and formatting rules.
 - Document your code thoroughly using docstrings.
-
+- Follow pylint's rules for the most part. Also ignore the import errors
+  I have no control over that other than ignoring them
+- Please use double quotes for consistency throughout the code. If you have single quotes, you can easily find and replace them with double quotes.
 ## Naming Conventions
 - **Variables and Functions**: Use snake_case (e.g., `calculate_total`).
 - **Classes**: Use CamelCase (e.g., `ColorSystem`).

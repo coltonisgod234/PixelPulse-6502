@@ -16,6 +16,6 @@
         }
     },
     "main": {
-        "cpu_debug_registers_msg": "PC: %-5s | A: %-3s | X: %-3s | Y: %-3s | P: %-8s | SP: %-3s | P1: %-8s | P2: %-8s | I: %-11s | C: %-3s | PS: %-3s"
+        "cpu_debug_registers_msg": "PC: %-5s | A: %-5s | X: %-5s | Y: %-5s | P: %-10s | SP: %-3s | P1: %-8s | P2: %-8s | I: %-11s | C: %-3s | PS: %-3s"
     }
 }

@@ -10,13 +10,11 @@ VRAM_LOCATION = 0x1000  # VRAM Location
 VRAM_END_LOCATION = 0x2FFF  # VRAM end location
 
 CHANNELS_COUNT = 4      # Amount of channels
+CHANNEL_OFFSETS = [0, 4, 8, 12]
 VOICES_COUNT = 4        # Amount of voices
 
-APU_VOLUME_BASE = 0     # Base volume of APU (a 0h in volume equals this)
-APU_VOLUME_STEP = 0.05  # How much volume to step of from the base
-APU_PITCH_BASE = 0      # Base pitch of APU (a 0h in pitch equals this)
-APU_PITCH_STEP = 512    # How much pitch to step up from the base
-APU_SAMPLERATE = 44100  # The sample rate of sounds in the APU
+APU_PITCH_TABLE = [0, 82, 110, 146, 246, 261, 293, 329, 349, 392, 440, 493, 525, 659, 880]
+APU_SAMPLERATE = 44000
 APU_LENGTH = 10 # The length of the sounds in the APU (not samples, just the individual pitches)
 
 TARGET_FPS = 60             # The target FPS of the system, typically 24
@@ -37,6 +35,8 @@ MAX_DIR_SEARCH_DEPTH = 4
 
 # The time when execution of the emulator begins, used for logging, delta calculations, ETC
 PROGRAM_EXECUTIONTIME_START = perf_counter()
+
+BLACK_COLORS_LIST_INDEX = 0
 
 # Open the logfile and reset it
 LOGFILE = open("pixelpulse.log", "w+", encoding="utf-8")

@@ -5,6 +5,9 @@ The main thread for PixelPulse
 import argparse
 from time import monotonic
 
+# Pylint does not shut up about my imports, so I've forced it to
+# pylint: disable=import-error
+
 import pygame
 from audiovisual.audio import tick_audio
 from audiovisual.video import (after_instruction, config_video, tick_display,
@@ -39,7 +42,6 @@ pixelStatusReg = PixelStatusRegister()
 # Initalize The Controllers
 controller1 = SystemControllerState()
 controller2 = SystemControllerState()
-SystemControllerState()
 last_time = monotonic()
 
 if __name__ == "__main__":
@@ -73,9 +75,9 @@ if __name__ == "__main__":
             print_locale("main.cpu_debug_registers_msg", __name__, "(MainLoop)",
                          [
                             cpu.pc,
-                            cpu.a,
-                            cpu.x,
-                            cpu.y,
+                            hex(cpu.a),
+                            hex(cpu.x),
+                            hex(cpu.y),
                             bin(cpu.p),
                             cpu.sp,
                             controller1.convert_buttons_to_int(),

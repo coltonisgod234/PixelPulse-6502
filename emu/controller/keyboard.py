@@ -4,6 +4,7 @@ Keyboard
 
 import pygame
 from cpu.states import SystemControllerState
+from utils.helpers import pixel_print
 
 p1_key_mappings = {
     pygame.K_x: "a",
@@ -32,6 +33,8 @@ def tick_keyboard(keys_pressed: pygame.key.ScancodeWrapper,
     """
     for key, button in p1_key_mappings.items():
         if keys_pressed[key]:
+            #pixel_print(f"  Ticking button {button}, key {key} ({keys_pressed[key]}): Pressed")
             controller1.press(button)
         else:
+            #pixel_print(f"  Ticking button {button}, key {key} ({keys_pressed[key]}): No Pressed")
             controller1.release(button)
