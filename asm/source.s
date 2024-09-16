@@ -57,8 +57,8 @@
         rts
     
     test_audio:
-        lda #$11
-        sta $3000
+        inc A
+        sta $3005
 
         jsr refresh_display
 

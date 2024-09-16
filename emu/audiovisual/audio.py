@@ -84,45 +84,6 @@ def tick_audio(cpu) -> None:
     # Play The Sounds
     audio_ram = cpu.memory[0x3000:0x3010]
     # Loop through all the channels
-    for channel, voices in AUDIO_TABLE.items():
-        # Loop through all voices in the current channel
-        for voice_index, pitch_byte in enumerate(voices):
-            if channel == 0:
-                x = audio_ram[pitch_byte]
-                frequency = APU_PITCH_TABLE[get_high_nibble(x)]
-                if frequency == 0:
-                    continue
-
-                audio = generate_square_wave(APU_LENGTH, frequency, 1.0)
-                sound = pygame.mixer.Sound(audio)
-                sound.play()
-
-            if channel == 1:
-                x = audio_ram[pitch_byte]
-                frequency = APU_PITCH_TABLE[get_high_nibble(x)]
-                if frequency == 0:
-                    continue
-
-                audio = generate_triangle_wave(APU_LENGTH, frequency, 1.0)
-                sound = pygame.mixer.Sound(audio)
-                sound.play()
-
-            if channel == 2:
-                x = audio_ram[pitch_byte]
-                frequency = APU_PITCH_TABLE[get_high_nibble(x)]
-                if frequency == 0:
-                    continue
-
-                audio = generate_sawtooth_wave(APU_LENGTH, frequency, 1.0)
-                sound = pygame.mixer.Sound(audio)
-                sound.play()
-                
-            if channel == 3:
-                x = audio_ram[pitch_byte]
-                frequency = APU_PITCH_TABLE[get_high_nibble(x)]
-                if frequency == 0:
-                    continue
-
-                audio = generate_sine_wave(APU_LENGTH, frequency, 1.0)
-                sound = pygame.mixer.Sound(audio)
-                sound.play()
+    for channel in AUDIO_TABLE.values():
+        for voice in AUDIO_TABLE.keys():
+            print(channel, voice)

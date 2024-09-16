@@ -17,14 +17,24 @@ def generate_sawtooth_wave(length, frequency: int, volume=1.0) -> np.ndarray:
     sawtooth_wave = 2 * (t * frequency - np.floor(t * frequency))
     return sawtooth_wave * volume
 
-def generate_square_wave(length: int, frequency: int, volume=1.0) -> np.ndarray:
+def generate_square_wave(length: int, frequency: int, volume=1.0) -> bytes:
+    # What does this do, I don't know but I think it makes a square wave
     t = np.linspace(0, length, int(length * APU_SAMPLERATE), endpoint=False)
     square_wave = np.sign(np.sin(2 * np.pi * frequency * t))
-    return square_wave * volume
+    
+    # This scales the volume so it's not super quiet
+    scaled_wave = square_wave * volume
+    
+    # This will convert it to 16-bit PCM format, apparently this is what I have to use
+    pcm_wave = np.int16(scaled_wave * 32767)
+    
+    # Now we have to convert to bytes
+    return pcm_wave.tobytes()
 
 def generate_sine_wave(length: int, frequency: int, volume=1.0) -> np.ndarray:
     t = np.linspace(0, length, int(length * APU_SAMPLERATE), endpoint=False)
     sine_wave = np.sin(2 * np.pi * frequency * t)
+
     return sine_wave * volume
 
 def draw_pixel(x: int, y: int, col: int) -> None:
