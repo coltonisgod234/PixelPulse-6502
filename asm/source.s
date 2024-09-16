@@ -1,12 +1,13 @@
 .segment "CODE"
-    .include "font_data.asm"
     ; Subroutine to refresh display
     refresh_display:
+        pha
         lda #%00000001    ; Load immediate value %00000001 into accumulator
         sta $3024         ; Store accumulator value into memory address $3024
 
         ;lda #%00000000    ; Load immediate value %00000000 into accumulator
         ;sta $3024         ; Store accumulator value into memory address $3024
+        pla
         rts               ; Return from subroutine
 
     ; Reset subroutine
@@ -56,8 +57,8 @@
         rts
     
     test_audio:
-        inc a
-        sta $3001
+        lda #$11
+        sta $3000
 
         jsr refresh_display
 
@@ -70,7 +71,7 @@
         ldy #0
 
         @loop:
-            lda FONT_A, x       ; Load data
+            ;lda FONT_A, x       ; Load data
             asl a               ; Shift left
             and #1              ; Get the LSB
             

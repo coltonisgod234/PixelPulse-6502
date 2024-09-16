@@ -320,3 +320,19 @@ def is_multiple_of_2(n: int) -> bool:
         Returns True if it is a multiple of 2, otherwise returns false
     """
     return (n & 1) == 0
+
+def combine_integers(high: int, low: int):
+    # Determine bit length required for high and low
+    high_bits = high.bit_length()
+    low_bits = low.bit_length()
+
+    # Shift high part by the number of bits in the low part
+    combined = (high << low_bits) | low
+    return combined
+
+def split_integers(combined, high_bits, low_bits):
+    # Extract the high part by shifting right and masking
+    high = (combined >> low_bits) & ((1 << high_bits) - 1)
+    
+    # Extract the low part by masking
+    low = combined & ((1 << low_bits) - 1)

@@ -20,6 +20,7 @@ from cpu.cpuhelpers import config_cpu, get_instruction_from_memory
 from cpu.states import (PixelStatusRegister, SystemControllerState,
                         tick_pixel_status_register)
 from utils.helpers import LocaleManager, pixel_print, print_locale
+from cpu.timer import Timer, tick_timer
 
 LocaleManager.load_locale(LocaleManager, "en", "CA")
 pixel_print("Set locale to en-CA", __name__, "(init)")
@@ -44,6 +45,8 @@ controller1 = SystemControllerState()
 controller2 = SystemControllerState()
 last_time = monotonic()
 
+PITtimer = Timer()
+
 if __name__ == "__main__":
     last_time = monotonic()
 
@@ -62,6 +65,8 @@ if __name__ == "__main__":
             # Process CPU tasks
             tick_cpu(cpu)   # Step the CPU
             tick_events()   # Tick the events
+            tick_timer(cpu, PITtimer)
+            
             pixelStatusReg = tick_pixel_status_register(cpu, pixelStatusReg)
 
             if pixelStatusReg.get_status(0):
@@ -84,7 +89,8 @@ if __name__ == "__main__":
                             controller2.convert_buttons_to_int(),
                             get_instruction_from_memory(cpu.pc, cpu),
                             cpu.processorCycles,
-                            pixelStatusReg.get_all_status()
+                            pixelStatusReg.get_all_status(),
+                            PITtimer.counter
                             ])
 
         # Cap the frame rate

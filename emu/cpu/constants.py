@@ -11,6 +11,34 @@ VRAM_END_LOCATION = 0x2FFF  # VRAM end location
 
 CHANNELS_COUNT = 4      # Amount of channels
 CHANNEL_OFFSETS = [0, 4, 8, 12]
+# SHUT THE FUCK UP:
+AUDIO_TABLE = {
+    # Channel num
+    0: [
+        0x00, # Voice 1
+        0x01, # Voice 2
+        0x02, # Voice 3
+        0x03  # ETC
+    ],
+    1: [
+        0x04,
+        0x05,
+        0x06,
+        0x07
+    ],
+    2: [
+        0x08,
+        0x09,
+        0x0a,
+        0x0b
+    ],
+    3: [
+        0x0c,
+        0x0d,
+        0x0e,
+        0x0f
+    ]
+}
 VOICES_COUNT = 4        # Amount of voices
 
 APU_PITCH_TABLE = [0, 82, 110, 146, 246, 261, 293, 329, 349, 392, 440, 493, 525, 659, 880]
