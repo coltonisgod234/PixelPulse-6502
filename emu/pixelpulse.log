@@ -1,10 +1,9 @@
-[00000.3361707000003662] [   find_directory@utils.helpers    ] debug     Searching for directory 'locale'
-[00000.3363089000004038] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils\helpers.py
-[000000.336445900000399] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils
-[0000.33654980000028445] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu
-[0000.33663780000006227] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
-[00000.3367294999998194] [        Undefined@Undefined        ] debug       Found directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
-[0000.33688749999964784] [           (init)@__main__         ] debug     Set locale to en-CA
-[0000.33763309999994817] [       config_cpu@cpu.cpuhelpers   ] debug     Cart is 0x10000 bytes.
-[00000.3383106000001135] [       config_cpu@cpu.cpuhelpers   ] debug     Loaded to 32866
-[00000.3992450000005192] [        Undefined@Undefined        ] debug     Initalization done!
+[0000.36621629999990546] [   find_directory@utils.helpers    ] debug     Searching for directory 'locale'
+[00000.3663522999995621] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils\helpers.py
+[00000.3664872999997897] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils
+[00000.3665916999998444] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu
+[0000.36670820000017557] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
+[00000.3668270999996821] [        Undefined@Undefined        ] debug       Found directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
+[00000.3670265999999174] [           (init)@__main__         ] debug     Set locale to en-CA
+[0000.36811930000021675] [       config_cpu@cpu.cpuhelpers   ] debug     Cart is 0x10000 bytes.
+[0000.36884379999992234] [       config_cpu@cpu.cpuhelpers   ] debug     Loaded to 32866

@@ -45,7 +45,7 @@ APU_PITCH_TABLE = [0, 82, 110, 146, 246, 261, 293, 329, 349, 392, 440, 493, 525,
 APU_SAMPLERATE = 44000
 APU_LENGTH = 10 # The length of the sounds in the APU (not samples, just the individual pitches)
 
-TARGET_FPS = 24             # The target FPS of the system, typically 24
+TARGET_FPS = 25             # The target FPS of the system, typically 24
 TARGET_CLOCK_RATE = 14000    # The target clock rate in Hz, typically 4 MHz
 CYCLES_PER_FRAME = 1024
 

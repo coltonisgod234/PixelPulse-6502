@@ -326,7 +326,6 @@ def is_multiple_of_2(n: int) -> bool:
 
 def combine_integers(high: int, low: int):
     # Determine bit length required for high and low
-    high_bits = high.bit_length()
     low_bits = low.bit_length()
 
     # Shift high part by the number of bits in the low part

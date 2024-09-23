@@ -49,70 +49,18 @@ PITtimer = Timer()
 
 pygame.mixer.init(frequency=APU_SAMPLERATE, size=-16, channels=16)
 
-pixel_print("Initalization done!")
-print("Cool people!")
-print("     Thanks to my coding instructor kevin for teaching me python")
-print("     Thanks to my friend lagthecat for at least TRYING to help")
-print("Cool libraries!")
-print("     py65       : emulation of the w65c02s")
-print("     argparse   : argument parsing")
-print("     pygame     : audiovisual engine")
-print("     numpy      : math, generation of audio")
-print("     scipy      : math, wave generation")
-print("     pytest     : unit testing, debugging")
-print("     cachetools : caching")
-
-#if __name__ == "__main__":
-#    last_time = monotonic()
-#
-#    while True:
-#        # Calculate elapsed time since last frame
-#        current_time = monotonic()
-#        delta_time = current_time - last_time
-#        last_time = current_time
-#
-#        # Calculate cycles to process based on delta time and target rate
-#        cycles_to_process = int(delta_time * TARGET_CLOCK_RATE)
-#        for _ in range(cycles_to_process):
-#            # Get key states
-#            keys = pygame.key.get_pressed()
-#
-#            # Process CPU tasks
-#                #tick_cpu(cpu)   # Step the CPU
-#            for _ in range(24):
-#                cpu.step()
-#                print(f"PC={cpu.pc:<10} A={hex(cpu.a):<5} X={hex(cpu.x):<5} Y={hex(cpu.y)} P={bin(cpu.p):>20} SP={cpu.sp:<5} I={get_instruction_from_memory(cpu.pc, cpu):<20}")
-#
-#            tick_events()   # Tick the events
-#
-#            pixelStatusReg = tick_pixel_status_register(cpu, pixelStatusReg)
-#
-#            if pixelStatusReg.get_status(0) == 1:
-#                tick_keyboard(keys, controller1)    # Tick the keyboard
-#                tick_display(cpu.memory[VRAM_LOCATION:VRAM_END_LOCATION])
-#                tick_audio(cpu)
-#
-#                print("Flushed hardware")
-#
-#                pixelStatusReg.clear_status(0)
-#
-#            after_instruction()
-            #print_locale("main.cpu_debug_registers_msg", __name__, "(AfterMainLoop)",
-            #             [
-            #                cpu.pc,
-            #                hex(cpu.a),
-            #                hex(cpu.x),
-            #                hex(cpu.y),
-            #                bin(cpu.p),
-            #                cpu.sp,
-            #                controller1.convert_buttons_to_int(),
-            #                controller2.convert_buttons_to_int(),
-            #                get_instruction_from_memory(cpu.pc, cpu),
-            #                cpu.processorCycles,
-            #                pixelStatusReg.get_all_status(),
-            #                PITtimer.counter
-            #                ])
-
+#pixel_print("Initalization done!")
+#print("Cool people!")
+#print("     Thanks to my coding instructor kevin for teaching me python")
+#print("     Thanks to my friend lagthecat for at least TRYING to help")
+#print("Cool libraries!")
+#print("     py65       : emulation of the w65c02s")
+#print("     argparse   : argument parsing")
+#print("     pygame     : audiovisual engine")
+#print("     numpy      : math, generation of audio")
+#print("     scipy      : math, wave generation")
+#print("     pytest     : unit testing, debugging")
+#print("     cachetools : caching")
 
 if __name__ == "__main__":
     last_time = monotonic()
@@ -130,11 +78,10 @@ if __name__ == "__main__":
         for _ in range(cycles_to_process):
             # Get key states
             keys = pygame.key.get_pressed()
-
-            # Process CPU tasks
-                #tick_cpu(cpu)   # Step the CPU
-            for _ in range(24):
+            
+            for _ in range(32):
                 cpu.step()
+                tick_timer(cpu, PITtimer)
 
             tick_events()
 
@@ -148,10 +95,25 @@ if __name__ == "__main__":
                 tick_display(cpu.memory[VRAM_LOCATION:VRAM_END_LOCATION])
                 tick_audio(cpu)
 
-                print(clock.get_time(), clock.get_fps())
+                #print(clock.get_time(), clock.get_fps())
 
                 clock.tick(TARGET_FPS)
 
                 pixelStatusReg.clear_status(0)
 
             after_instruction(clock)
+            #print_locale("main.cpu_debug_registers_msg", __name__, "(AfterMainLoop)",
+            #             [
+            #                cpu.pc,
+            #                hex(cpu.a),
+            #                hex(cpu.x),
+            #                hex(cpu.y),
+            #                bin(cpu.p),
+            #                cpu.sp,
+            #                controller1.convert_buttons_to_int(),
+            #                controller2.convert_buttons_to_int(),
+            #                get_instruction_from_memory(cpu.pc, cpu),
+            #                cpu.processorCycles,
+            #                pixelStatusReg.get_all_status(),
+            #                PITtimer.counter
+            #                ])

@@ -9,7 +9,7 @@ import pygame
 from cpu.constants import APU_SAMPLERATE, DISPLAY_X_SIZE, DISPLAY_Y_SIZE, BLACK_COLORS_LIST_INDEX
 
 from audiovisual.avhelpers import draw_pixel
-from utils.helpers import get_high_nibble, get_low_nibble, is_multiple_of_2, extract_bit
+from utils.helpers import get_high_nibble, get_low_nibble, is_multiple_of_2
 
 
 def config_video() -> tuple:
