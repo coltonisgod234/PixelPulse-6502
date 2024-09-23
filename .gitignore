@@ -17,3 +17,8 @@ pixelpulse/
 # Python testing frameworks
 .pytest_cache/
 coverage/
+
+.venv/
+
+asm/object.o
+emu/pixelpulse.log
