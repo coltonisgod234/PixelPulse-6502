@@ -29,7 +29,7 @@ def config_video() -> tuple:
     pygame.display.init()
     pygame.display.set_caption("PixelPulse 6502")
     pygame.mixer.init(APU_SAMPLERATE)
-    display = pygame.display.set_mode((DISPLAY_X_SIZE*8, DISPLAY_Y_SIZE*8))
+    display = pygame.display.set_mode((DISPLAY_X_SIZE, DISPLAY_Y_SIZE))
     return (display,clock)
 
 def tick_events():
@@ -41,7 +41,7 @@ def tick_events():
         if event.type == pygame.QUIT:
             exit(0)
 
-def before_instruction():
+def refresh_screen():
     """
     To be executed at the start of an instruction
     """
@@ -121,4 +121,4 @@ def tick_display(vram: list[int]):
             # High nibble color
             col_high = get_high_nibble(vram[addr])
             if col_high != BLACK_COLORS_LIST_INDEX:
-                draw_pixel(x + 4, y, col_high)
+                draw_pixel(x + 11, y, col_high)

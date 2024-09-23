@@ -10,7 +10,7 @@ from time import monotonic
 
 import pygame
 from audiovisual.audio import tick_audio
-from audiovisual.video import (after_instruction, config_video, tick_display,
+from audiovisual.video import (after_instruction, config_video, refresh_screen, tick_display,
                                tick_events)
 from controller.keyboard import tick_keyboard
 from cpu.constants import (TARGET_CLOCK_RATE, TARGET_FPS, VRAM_END_LOCATION,
@@ -49,19 +49,6 @@ PITtimer = Timer()
 
 pygame.mixer.init(frequency=APU_SAMPLERATE, size=-16, channels=16)
 
-#pixel_print("Initalization done!")
-#print("Cool people!")
-#print("     Thanks to my coding instructor kevin for teaching me python")
-#print("     Thanks to my friend lagthecat for at least TRYING to help")
-#print("Cool libraries!")
-#print("     py65       : emulation of the w65c02s")
-#print("     argparse   : argument parsing")
-#print("     pygame     : audiovisual engine")
-#print("     numpy      : math, generation of audio")
-#print("     scipy      : math, wave generation")
-#print("     pytest     : unit testing, debugging")
-#print("     cachetools : caching")
-
 if __name__ == "__main__":
     last_time = monotonic()
 
@@ -75,10 +62,11 @@ if __name__ == "__main__":
         if cycles_to_process <= 0:
             continue  # Skip processing if no cycles are available
 
+
         for _ in range(cycles_to_process):
             # Get key states
             keys = pygame.key.get_pressed()
-            
+
             for _ in range(32):
                 cpu.step()
                 tick_timer(cpu, PITtimer)
@@ -88,6 +76,7 @@ if __name__ == "__main__":
             pixelStatusReg = tick_pixel_status_register(cpu, pixelStatusReg)
 
             if pixelStatusReg.get_status(0) == 1:
+                refresh_screen()
     
                 #print("Flushing hardware")
 

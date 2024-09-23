@@ -1,9 +1,9 @@
-[0000.36621629999990546] [   find_directory@utils.helpers    ] debug     Searching for directory 'locale'
-[00000.3663522999995621] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils\helpers.py
-[00000.3664872999997897] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils
-[00000.3665916999998444] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu
-[0000.36670820000017557] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
-[00000.3668270999996821] [        Undefined@Undefined        ] debug       Found directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
-[00000.3670265999999174] [           (init)@__main__         ] debug     Set locale to en-CA
-[0000.36811930000021675] [       config_cpu@cpu.cpuhelpers   ] debug     Cart is 0x10000 bytes.
-[0000.36884379999992234] [       config_cpu@cpu.cpuhelpers   ] debug     Loaded to 32866
+[00000.3903817999998864] [   find_directory@utils.helpers    ] debug     Searching for directory 'locale'
+[00000.3905174999999872] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils\helpers.py
+[0000.39069709999967017] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu\utils
+[0000.39082609999968554] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502\emu
+[00000.3909146000005421] [   find_directory@utils.helpers    ] debug       Searching directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
+[00000.3910032999992836] [        Undefined@Undefined        ] debug       Found directory C:\Users\Colton Wollinger\poc\PixelPulse-6502
+[00000.3911714000005304] [           (init)@__main__         ] debug     Set locale to en-CA
+[0000.39203919999999925] [       config_cpu@cpu.cpuhelpers   ] debug     Cart is 0x10000 bytes.
+[00000.3927726000001712] [       config_cpu@cpu.cpuhelpers   ] debug     Loaded to 32865

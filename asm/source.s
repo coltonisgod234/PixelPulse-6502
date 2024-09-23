@@ -44,7 +44,7 @@
 
         @col:
             inx ; Next reigon
-            cpx #$20 ; If we have reached the end of VRAM we're done
+            cpx #$2E ; If we have reached the end of VRAM we're done
             bpl @done
 
             ; Otherwise, call @row
@@ -56,7 +56,6 @@
         @row:
             iny ; Next coloumn
             dec A
-            lsr
 
             bcc dynamic_store ; Store those to the screen
 

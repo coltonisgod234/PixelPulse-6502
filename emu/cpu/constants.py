@@ -6,6 +6,10 @@ from time import perf_counter
 
 DISPLAY_X_SIZE = 64     # X size of display
 DISPLAY_Y_SIZE = 64     # Y size of display
+
+PIXEL_X_SIZE = DISPLAY_X_SIZE / 1
+PIXEL_Y_SIZE = DISPLAY_Y_SIZE / 1
+
 VRAM_LOCATION = 0x1000  # VRAM Location
 VRAM_END_LOCATION = 0x2FFF  # VRAM end location
 
