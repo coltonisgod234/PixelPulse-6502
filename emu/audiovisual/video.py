@@ -9,7 +9,7 @@ import pygame
 from cpu.constants import APU_SAMPLERATE, DISPLAY_X_SIZE, DISPLAY_Y_SIZE, BLACK_COLORS_LIST_INDEX
 
 from audiovisual.avhelpers import draw_pixel
-from utils.helpers import get_high_nibble, get_low_nibble, is_multiple_of_2
+from utils.helpers import get_high_nibble, get_low_nibble, is_multiple_of_2, extract_bit
 
 
 def config_video() -> tuple:
@@ -49,13 +49,14 @@ def before_instruction():
     display = pygame.display.get_surface()
     display.fill((0,0,0))
 
-def after_instruction():
+def after_instruction(clock):
     """
     To be executed at the end of an instruction
     """
     # Handle flipping the buffers
     #display = pygame.display.get_surface()
     pygame.display.flip()
+    pygame.display.set_caption(f"Pixelpulse {clock.get_fps()}")
 
 def extract_pixel_at_location(x: int, y: int, vram: list[int]) -> int:
     """
@@ -84,6 +85,13 @@ def extract_pixel_at_location(x: int, y: int, vram: list[int]) -> int:
     else:
         return get_high_nibble(vram[y * DISPLAY_Y_SIZE + x])
 
+def get_bit_pair(byte, position):
+    # Shift right to move the desired bits to the least significant position
+    shifted = byte >> (position * 2)
+    # Mask to get only the last 2 bits
+    bit_pair = shifted & 0b11  # 0b11 is binary for 3, which is 0x03 in hexadecimal
+    return bit_pair
+
 def tick_display(vram: list[int]):
     """
     Update the display
@@ -96,22 +104,21 @@ def tick_display(vram: list[int]):
         The video memory to use
     """
     # Handle drawing the pixels
-    for x in range(DISPLAY_X_SIZE):  # Loop through all the pixels
-        for y in range(DISPLAY_Y_SIZE):  # Loop through all the pixels
-            # The address will be the same, so compute it now, this will save a minuscule, 
-            # but still nice amount of time
-            addr = y * DISPLAY_Y_SIZE + x
+    for y in range(DISPLAY_Y_SIZE):
+        # Optimization: Compute the row's base address only once
+        row_base_addr = y * DISPLAY_Y_SIZE
 
-            # Color 1
-            col = get_low_nibble(vram[addr])
+        for x in range(DISPLAY_X_SIZE):
+            addr = row_base_addr + x  # Use the precomputed row base address
 
-            # Optimization: only draw pixels that change the starting colour (black) of our canvas
-            if col != BLACK_COLORS_LIST_INDEX:
-                draw_pixel(x, y, col)
+            # Low nibble color
+            col_low = get_low_nibble(vram[addr])
 
-            # Color 2
-            col = get_high_nibble(vram[addr])
+            # Optimization: Don't draw black pixels, as we start on a black background
+            if col_low != BLACK_COLORS_LIST_INDEX:
+                draw_pixel(x, y, col_low)
 
-            if col != BLACK_COLORS_LIST_INDEX: # Black
-                draw_pixel(x+4, y, col)
-            #pixel_print(f"Bad pixel data. {e}", 2)
+            # High nibble color
+            col_high = get_high_nibble(vram[addr])
+            if col_high != BLACK_COLORS_LIST_INDEX:
+                draw_pixel(x + 4, y, col_high)

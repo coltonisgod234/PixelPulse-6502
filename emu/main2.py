@@ -225,13 +225,6 @@ pygame.display.set_caption("PixelPulse 6502")
 pygame.mixer.init(APU_SAMPLE_RATE)
 display = pygame.display.set_mode((DISPLAY_X_SIZE*5, DISPLAY_Y_SIZE*5))
 
-# Hi!!!
-#print("********************* BOOTUP *************************")
-#print("* PIXELPULSE 6502 IS A FANTASY VIDEO GAME CONSOLE    *")
-#print("* THANK YOU TO __________ ON DISCORD AND THE PYGAME  *")
-#print("* TEAM FOR HELPING MAKE THIS PROJECT POSSIBLE!       *")
-#print("******************************************************")
-#print("the above is blacked out, this person wishes for their privacy until the full release")
 
 
 def get_instruction_from_memory(addr: int) -> str:

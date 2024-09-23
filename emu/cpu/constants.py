@@ -41,12 +41,13 @@ AUDIO_TABLE = {
 }
 VOICES_COUNT = 4        # Amount of voices
 
-APU_PITCH_TABLE = [0, 82, 110, 146, 246, 261, 293, 329, 349, 392, 440, 493, 525, 659, 880]
+APU_PITCH_TABLE = [0, 82, 110, 146, 246, 261, 293, 329, 349, 392, 440, 493, 525, 659, 880, 1024, 2048, 3048, 3048]
 APU_SAMPLERATE = 44000
 APU_LENGTH = 10 # The length of the sounds in the APU (not samples, just the individual pitches)
 
-TARGET_FPS = 60             # The target FPS of the system, typically 24
-TARGET_CLOCK_RATE = 4000    # The target clock rate in Hz, typically 4 MHz
+TARGET_FPS = 24             # The target FPS of the system, typically 24
+TARGET_CLOCK_RATE = 14000    # The target clock rate in Hz, typically 4 MHz
+CYCLES_PER_FRAME = 1024
 
 VERSION_INFO = "PixelPulse v0.4 prealpha"
 
