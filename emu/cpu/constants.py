@@ -7,8 +7,13 @@ from time import perf_counter
 DISPLAY_X_SIZE = 64     # X size of display
 DISPLAY_Y_SIZE = 64     # Y size of display
 
-PIXEL_X_SIZE = DISPLAY_X_SIZE / 1
-PIXEL_Y_SIZE = DISPLAY_Y_SIZE / 1
+WINDOW_X_SIZE = 64     # X size of display
+WINDOW_Y_SIZE = 64     # Y size of display
+
+PIXEL_X_SIZE = 1
+PIXEL_Y_SIZE = 1
+
+print(PIXEL_X_SIZE)
 
 VRAM_LOCATION = 0x1000  # VRAM Location
 VRAM_END_LOCATION = 0x2FFF  # VRAM end location
@@ -49,7 +54,7 @@ APU_PITCH_TABLE = [0, 82, 110, 146, 246, 261, 293, 329, 349, 392, 440, 493, 525,
 APU_SAMPLERATE = 44000
 APU_LENGTH = 10 # The length of the sounds in the APU (not samples, just the individual pitches)
 
-TARGET_FPS = 25             # The target FPS of the system, typically 24
+TARGET_FPS = 24             # The target FPS of the system, typically 24
 TARGET_CLOCK_RATE = 14000    # The target clock rate in Hz, typically 4 MHz
 CYCLES_PER_FRAME = 1024
 

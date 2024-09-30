@@ -17,7 +17,7 @@ from cpu.constants import (TARGET_CLOCK_RATE, TARGET_FPS, VRAM_END_LOCATION,
                            VRAM_LOCATION, APU_SAMPLERATE, CYCLES_PER_FRAME)
 from cpu.cpu_emu import tick_cpu
 from cpu.cpuhelpers import config_cpu, get_instruction_from_memory
-from cpu.states import (PixelStatusRegister, SystemControllerState,
+from cpu.states import (PixelStatusRegister, SystemControllerState, tick_controllers,
                         tick_pixel_status_register)
 from utils.helpers import LocaleManager, pixel_print, print_locale
 from cpu.timer import Timer, tick_timer
@@ -67,26 +67,29 @@ if __name__ == "__main__":
             # Get key states
             keys = pygame.key.get_pressed()
 
-            for _ in range(32):
-                cpu.step()
-                tick_timer(cpu, PITtimer)
+            cpu.step()
+            tick_timer(cpu, PITtimer)
 
             tick_events()
 
             pixelStatusReg = tick_pixel_status_register(cpu, pixelStatusReg)
 
             if pixelStatusReg.get_status(0) == 1:
+
                 refresh_screen()
-    
+
                 #print("Flushing hardware")
 
-                tick_keyboard(keys, controller1)    # Tick the keyboard
                 tick_display(cpu.memory[VRAM_LOCATION:VRAM_END_LOCATION])
                 tick_audio(cpu)
 
-                #print(clock.get_time(), clock.get_fps())
+                #tick_controllers(cpu, controller1, controller2)
+                #tick_keyboard(keys, controller1, controller2)
+
 
                 clock.tick(TARGET_FPS)
+
+                #pixel_print(f"Ticked hardware in {clock.get_rawtime():<4} MS! ({clock.get_fps():<25} FPS!)", "main", "(MainLoop)", 1)
 
                 pixelStatusReg.clear_status(0)
 

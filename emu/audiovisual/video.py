@@ -6,7 +6,7 @@ Manages video logic for the PixelPulse
 # pylint: disable=import-error
 
 import pygame
-from cpu.constants import APU_SAMPLERATE, DISPLAY_X_SIZE, DISPLAY_Y_SIZE, BLACK_COLORS_LIST_INDEX
+from cpu.constants import APU_SAMPLERATE, DISPLAY_X_SIZE, DISPLAY_Y_SIZE, BLACK_COLORS_LIST_INDEX, WINDOW_X_SIZE, WINDOW_Y_SIZE
 
 from audiovisual.avhelpers import draw_pixel
 from utils.helpers import get_high_nibble, get_low_nibble, is_multiple_of_2
@@ -29,7 +29,7 @@ def config_video() -> tuple:
     pygame.display.init()
     pygame.display.set_caption("PixelPulse 6502")
     pygame.mixer.init(APU_SAMPLERATE)
-    display = pygame.display.set_mode((DISPLAY_X_SIZE, DISPLAY_Y_SIZE))
+    display = pygame.display.set_mode((WINDOW_X_SIZE, WINDOW_Y_SIZE))
     return (display,clock)
 
 def tick_events():

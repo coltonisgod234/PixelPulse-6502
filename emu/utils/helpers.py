@@ -81,21 +81,21 @@ def load_json_path(json_file: dict, path: str):
     Any
         varible representing the value at that path
     """
-    #pixel_print(f"Searching for {resource_name}/{path}...",
-    # __name__, f"load_JSON_path")
+    pixel_print(f"Searching for {path}...",
+     __name__, "load_JSON_path")
     keys = path.split(".") # Split by every dot
     try:
         return JSONcache[f"{json_file},{path}"] # If it's cached, just return the cached value
     except KeyError:
         for key in keys: # For every key, we go down one place
 
-            #pixel_print(f"  Searching for {resource_name}/{path}, currently in {key}",
-            # __name__, f"load_JSON_path")
+            pixel_print(f"  Searching for {path}, currently in {key}",
+             __name__, "load_JSON_path")
 
             json_file = json_file.get(key, {})
 
-        #pixel_print(f"Found matching {key} for {resource_name}/{path}",
-        # __name__, f"load_JSON_path")
+        pixel_print(f"Found matching {key} for {path}",
+         __name__, "load_JSON_path")
 
         JSONcache[f"{json_file},{path}"] = json
         return json_file # At the end we return the JSON
@@ -264,7 +264,7 @@ def pixel_print(msg: str, mod="Undefined", function="Undefined", errorlevel=1) -
     try:
         #if errorlevel == 1:
         #    return # We don't care about debug info if this is a release mode
-        formatted_msg = f"[{pretty_float(get_execution_time(),22):>22}] [{function:>17}@{mod:<17}] {ERRRORLEVEL_TABLE[errorlevel]:<6}    {msg}"
+        formatted_msg = f"[{get_execution_time():>22}] [{function:>17}@{mod:<17}] {ERRRORLEVEL_TABLE[errorlevel]:<6}    {msg}"
         format(formatted_msg)
         LOGFILE.write(f"{formatted_msg}\n")
         print(formatted_msg)

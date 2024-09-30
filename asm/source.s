@@ -7,7 +7,7 @@
         ;STA $0000   ; Store A temporarily (zero page, 1 cycle)
         STY $00     ; Store low byte (Y) to zero page (1 cycle)
         STX $01     ; Store high byte (X) to next zero page (1 cycle)
-        ;LDA $0000
+        LDA $00
         STA ($00),Y ; Store indirect via zero page, uses zero page (5 cycles)
         rts
     
@@ -35,32 +35,28 @@
         jmp rst
 
     test_display:
-        lda #$00
         ldx #$10
-        jsr @col
-
-        @done:
-            rts
+        jsr @rei
 
         @col:
-            inx ; Next reigon
-            cpx #$2E ; If we have reached the end of VRAM we're done
-            bpl @done
+            inc a
 
-            ; Otherwise, call @row
-            jsr @row
+            iny
 
-            jmp @col
+            jsr dynamic_store
 
+            cpy #$FF
+            bne @col
 
-        @row:
-            iny ; Next coloumn
-            dec A
+            rts
 
-            bcc dynamic_store ; Store those to the screen
+        @rei:
+            jsr @col
 
-            cpy #$FF ; If we need to loop then go back
-            bne @row
+            inx
+
+            cpx #$20
+            bne @rei
 
             rts
 
@@ -93,9 +89,9 @@
             asl a               ; Shift left
             and #1              ; Get the LSB
 
+            sta $1000,x
         
         rts
-
 
     test_controller:
         ;lda $3011               ; Get our controller #1 state
@@ -107,7 +103,13 @@
         ;bne test_controller     ; Repeat until all bits are done
 
         lda $3011
-        sta $1050
+        jmp @row
+        @row:
+            sta $1000,y
+            iny
+
+            cpy #$FF
+            bne @row
 
         jsr refresh_display
         rts

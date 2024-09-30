@@ -3,20 +3,20 @@ Keyboard
 """
 
 import pygame
-from cpu.states import SystemControllerState
+from cpu.states import SystemControllerState, tick_controllers
 from utils.helpers import pixel_print
 
 p1_key_mappings = {
-    pygame.K_x: "a",
-    pygame.K_z: "b",
-    pygame.K_UP: "up",
-    pygame.K_DOWN: "down",
-    pygame.K_LEFT: "left",
-    pygame.K_RIGHT: "right"
+    "a": pygame.K_x,
+    "b": pygame.K_z,
+    "up": pygame.K_UP,
+    "down": pygame.K_DOWN,
+    "left": pygame.K_LEFT,
+    "right": pygame.K_RIGHT
 }
 
 def tick_keyboard(keys_pressed: pygame.key.ScancodeWrapper,
-                  controller1: SystemControllerState):
+                  controller1: SystemControllerState, controller2: SystemControllerState):
     """
     Ticks the keyboard
 
@@ -31,7 +31,7 @@ def tick_keyboard(keys_pressed: pygame.key.ScancodeWrapper,
         A SystemControllerState object representing what buttons are 
         pushed on the emulated controller
     """
-    for key, button in p1_key_mappings.items():
+    for button, key in p1_key_mappings.items():
         if keys_pressed[key]:
             #pixel_print(f"  Ticking button {button}, key {key} ({keys_pressed[key]}): Pressed")
             controller1.press(button)

@@ -70,6 +70,5 @@ def draw_pixel(x: int, y: int, col: int) -> None:
     if col == 0:
         return
 
-
     rect = pygame.rect.Rect(x, y, PIXEL_X_SIZE, PIXEL_Y_SIZE)
     pygame.draw.rect(display, colors[col], rect)
